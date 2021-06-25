@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/attribute_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linerbarcameradisplay"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/attribute_56_dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/cda_save"
+                android:layout_width="@dimen/attribute_30_dp"
+                android:layout_height="@dimen/attribute_30_dp"
+                android:scaleType="centerInside"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:background="@mipmap/attribute_ic_return" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="视频流回显角度"
+                android:textColor="@color/attribute_white"
+                android:textSize="@dimen/attribute_25_dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/attribute_0.3_dp"
+        android:background="@color/attribute_333333"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.9"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linercameradisplay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/attribute_50_dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvcameradisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:text="视频流回显旋转角度"
+                android:textColor="@color/attribute_activition_on"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/cwcameradisplay"
+                android:layout_width="@dimen/attribute_20_dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/attribute_icon_setting_question"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/attribute_20_dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/rela_preview_zero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/attribute_image_head_up" />
+
+                <RadioButton
+                    android:id="@+id/cda_display_zero_angle"
+                    android:layout_width="@dimen/attribute_80_dp"
+                    android:layout_height="@dimen/attribute_80_dp"
+                    android:layout_marginLeft="@dimen/attribute_50_dp"
+                    android:button="@drawable/attribute_sr_radio_button__selector"
+                    android:checked="false"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/rela_preview_ninety"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/attribute_80_dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/attribute_image_head_right" />
+
+                <RadioButton
+                    android:id="@+id/cda_display_ninety_angle"
+                    android:layout_width="@dimen/attribute_80_dp"
+                    android:layout_height="@dimen/attribute_80_dp"
+                    android:layout_marginLeft="@dimen/attribute_50_dp"
+                    android:button="@drawable/attribute_sr_radio_button__selector"
+                    android:checked="false"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/attribute_10_dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/rela_preview_one_hundred_eighty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/attribute_image_head_down" />
+
+                <RadioButton
+                    android:id="@+id/cda_display_one_hundred_eighty"
+                    android:layout_width="@dimen/attribute_80_dp"
+                    android:layout_height="@dimen/attribute_80_dp"
+                    android:layout_marginLeft="@dimen/attribute_50_dp"
+                    android:button="@drawable/attribute_sr_radio_button__selector"
+                    android:checked="false"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/rela_preview_two_hundred_seventy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/attribute_80_dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/attribute_image_head_left" />
+
+                <RadioButton
+                    android:id="@+id/cda_display_two_hundred_seventy"
+                    android:layout_width="@dimen/attribute_80_dp"
+                    android:layout_height="@dimen/attribute_80_dp"
+                    android:layout_marginLeft="@dimen/attribute_50_dp"
+                    android:button="@drawable/attribute_sr_radio_button__selector"
+                    android:checked="false"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/logo_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/attribute_23_dp"
+                android:alpha="0.4"
+                android:gravity="center_horizontal"
+                android:text="— 百度大脑技术支持 —"
+                android:textColor="@color/attribute_title"
+                android:textSize="@dimen/bottom_font" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

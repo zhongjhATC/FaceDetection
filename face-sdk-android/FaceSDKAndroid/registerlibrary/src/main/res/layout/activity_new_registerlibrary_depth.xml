@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!--RGB预览-->
+    <RelativeLayout
+        android:id="@+id/relative_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relative_bottom_bg">
+        <com.baidu.idl.main.facesdk.registerlibrary.user.camera.AutoTexturePreviewView
+            android:id="@+id/auto_camera_preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.baidu.idl.main.facesdk.registerlibrary.user.view.FaceRoundProView
+            android:id="@+id/round_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+        <org.openni.android.OpenNIView
+            android:id="@+id/open_view"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <!--title-->
+    <RelativeLayout
+        android:id="@+id/relative_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/background">
+
+        <ImageView
+            android:id="@+id/image_register_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="21dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_return" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="人脸注册"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_font" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_bottom_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/ic_bg_bottom_pattern"/>
+
+    <TextView
+        android:id="@+id/text_preview_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/relative_bottom_bg"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:text=""/>
+
+    <!--百度大脑技术支持-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:textSize="@dimen/bottom_font"
+        android:textColor="@color/bottom_font_color"
+        android:text="@string/bottom_content"/>
+
+    <!--采集成功相关页面-->
+    <include
+        layout="@layout/registerlibrary_layout_collect_success"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_title"
+        android:visibility="gone" />
+
+    <!--注册成功相关页面-->
+    <include
+        layout="@layout/registerlibrary_layout_register_success"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_title"
+        android:visibility="gone" />
+
+</RelativeLayout>

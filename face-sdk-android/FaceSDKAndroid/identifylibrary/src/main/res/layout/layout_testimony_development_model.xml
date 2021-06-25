@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/kaifa_relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="145dp"
+    android:background="@drawable/gate_radius"
+    android:visibility="gone">
+
+
+    <RelativeLayout
+        android:id="@+id/kaifa_leftRl"
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:layout_marginTop="@dimen/start_10"
+        android:layout_marginBottom="@dimen/start_10">
+
+        <RelativeLayout
+            android:id="@+id/Development_addRl"
+            android:layout_width="wrap_content"
+            android:layout_height="124.7dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:background="@mipmap/accredit_mask"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/Development_addIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:background="@mipmap/icon_upload" />
+
+            <TextView
+                android:id="@+id/Development_upload_filesTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Development_addIv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/testimony_upload_files"
+                android:textColor="#FFFFFFFF"
+                android:textSize="@dimen/activition_14_sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hint_showRl"
+            android:layout_width="wrap_content"
+            android:layout_height="125dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:background="@mipmap/accredit_mask"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/hint_showIv"
+                android:layout_width="100dp"
+                android:layout_height="85dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/hint_adainTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/hint_adain"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--                开发模式耗时得分-->
+    <include layout="@layout/layout_testimony_fraction" />
+</RelativeLayout>

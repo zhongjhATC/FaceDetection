@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/logo_view"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linerbarquality"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/qc_save"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@mipmap/ic_return"
+                        android:scaleType="centerInside"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="质量检测设置"
+                    android:textColor="@color/gate_white"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#333333"></View>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <LinearLayout
+                        android:id="@+id/qc_LinerFirst"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/sr_liner_rectangle"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="质量检测"
+                            android:textColor="@color/gate_white"
+                            android:textSize="20sp" />
+
+                        <Switch
+                            android:id="@+id/qc_Quality"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="247dp"
+                            android:thumb="@drawable/setting_switch_thumb"
+                            android:track="@drawable/setting_switch_track_selector" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/qc_LinerQuality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sr_liner_rectangle"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linergesture"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvgesture"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="姿态"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="(单位:度)"
+                                    android:textColor="#999999"></TextView>
+
+                                <Button
+                                    android:id="@+id/cwgesture"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@mipmap/icon_setting_question"></Button>
+
+                                <ImageView
+                                    android:id="@+id/qc_GestureDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="133dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_GestureEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="90"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_GestureIncrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333"></View>
+
+                            <LinearLayout
+                                android:id="@+id/linerilluminiation"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvilluminiation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="光照"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <Button
+                                    android:id="@+id/cwilluminiation"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@mipmap/icon_setting_question"></Button>
+
+                                <ImageView
+                                    android:id="@+id/qc_IlluminiationDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="205dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_IlluminiationEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="156"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_IlluminiationIncrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333"></View>
+
+                            <LinearLayout
+                                android:id="@+id/linerblur"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvblur"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="模糊度"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <Button
+                                    android:id="@+id/cwblur"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@mipmap/icon_setting_question"></Button>
+
+                                <ImageView
+                                    android:id="@+id/qc_BlurDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="185dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_BlurEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="0.2"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_BlurIncrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp">
+
+                        <LinearLayout
+                            android:id="@+id/linerocclusion"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvocclusion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="遮挡"
+                                android:textColor="#999999"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:text="0是无遮挡，1是完全遮挡"
+                                android:textColor="#999999"></TextView>
+
+                            <Button
+                                android:id="@+id/cwocclusion"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@mipmap/icon_setting_question"></Button>
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sr_liner_rectangle"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="左右眼"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/qc_EyeDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="215dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_EyeEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="0.2"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_EyeIncrease"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333"></View>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="左右脸颊"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/qc_CheekDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="195dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_CheekEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="0.2"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_CheekIncrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333"></View>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="鼻子"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/qc_NoseDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="235dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_NoseEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="0.2"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_NoseIncrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333"></View>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="嘴巴"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/qc_MouseDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="235dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_MouseEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="0.2"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_MouseIncrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333"></View>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="下巴"
+                                    android:textColor="@color/gate_white"
+                                    android:textSize="20sp"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/qc_ChinDecrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="235dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_minus" />
+
+                                <EditText
+                                    android:id="@+id/qc_ChinEtThreshold"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/sr_liner_rectangle_black"
+                                    android:focusable="false"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:minWidth="60dp"
+                                    android:text="0.2"
+                                    android:textColor="#cccccc"
+                                    android:textSize="20sp" />
+
+                                <ImageView
+                                    android:id="@+id/qc_ChinIncrease"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@mipmap/icon_setting_add" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/logo_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activition_20"
+        android:layout_above="@+id/logo_text"/>
+
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="23dp"
+        android:alpha="0.4"
+        android:gravity="center_horizontal"
+        android:text="— 百度大脑技术支持 —"
+        android:textColor="#666666"
+        android:textSize="@dimen/bottom_font" />
+
+    <View
+        android:id="@+id/popShowRely"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

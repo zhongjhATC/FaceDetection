@@ -1,0 +1,4 @@
+<resources>
+    <string name="common_loading">等待&#8230;</string>
+    <string name="restart_app">重启app</string>
+</resources>

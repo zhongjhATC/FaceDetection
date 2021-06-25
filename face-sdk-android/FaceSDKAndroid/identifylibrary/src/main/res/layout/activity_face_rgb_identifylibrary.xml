@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/testimony_Rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".testimony.FaceRGBPersonActivity">
+
+
+    <com.baidu.idl.main.facesdk.identifylibrary.camera.AutoTexturePreviewView
+        android:id="@+id/auto_rgb_preview_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextureView
+        android:id="@+id/texture_view_draw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/mongolia_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--    title-->
+    <include
+        android:id="@+id/testimony_titleRl"
+        layout="@layout/layout_title_testimony" />
+
+    <!--RGB 检测图片测试-->
+    <RelativeLayout
+        android:id="@+id/test_rgb_rl"
+        android:layout_width="110dp"
+        android:layout_height="82.7dp"
+        android:layout_above="@+id/person_buttomLl_All"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/test_rgb_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gate_imageview_radius"
+            android:src="@mipmap/ic_image_video" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:layout_alignParentBottom="true"
+            android:background="#B3000000"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="RGB图片帧"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/person_kaifaIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="2dp"
+                android:src="@mipmap/ic_icon_develop_success"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--        提示-->
+    <include layout="@layout/layout_testimory_hint" />
+
+    <RelativeLayout
+        android:id="@+id/person_buttomLl_All"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <!--        预览模式-->
+        <include layout="@layout/layout_testimony_preview_mode" />
+        <!--        开发模式-->
+        <include layout="@layout/layout_testimony_development_model" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/person_baiduTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="@string/home_baidu"
+        android:textColor="#808080"
+        android:textSize="12sp" />
+</RelativeLayout>

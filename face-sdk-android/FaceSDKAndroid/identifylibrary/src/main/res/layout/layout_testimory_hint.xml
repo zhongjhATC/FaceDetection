@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/test_rgb_rl"
+    android:layout_centerHorizontal="true"
+    android:layout_marginRight="45dp"
+    android:layout_marginBottom="20dp">
+
+    <RelativeLayout
+        android:id="@+id/testimony_tips_failRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gate_radius_compare"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/testimony_tips_failIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22.3dp"
+            android:layout_marginTop="19.3dp"
+            android:layout_marginBottom="19.3dp"
+            android:background="@mipmap/tips_fail" />
+
+        <TextView
+            android:id="@+id/testimony_tips_failTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="17.7dp"
+            android:layout_marginTop="21.7dp"
+            android:layout_marginRight="53.7dp"
+            android:layout_marginBottom="13.7dp"
+            android:layout_toRightOf="@+id/testimony_tips_failIv"
+            android:gravity="center_horizontal"
+            android:text="@string/testimony_tips_fail"
+            android:textColor="#FFFEC133"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/testimony_tips_please_failTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/testimony_tips_failTv"
+            android:layout_marginLeft="17.7dp"
+            android:layout_marginBottom="21.7dp"
+            android:layout_toRightOf="@+id/testimony_tips_failIv"
+            android:text="@string/testimony_tips_please_fail"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_compare_status"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:background="@drawable/gate_radius_compare"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_compare_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</RelativeLayout>
+

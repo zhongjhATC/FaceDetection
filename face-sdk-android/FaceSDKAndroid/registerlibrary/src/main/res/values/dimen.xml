@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_font">25sp</dimen>
+    <dimen name="bottom_font">12sp</dimen>
+    <dimen name="start_title">27.3sp</dimen>
+    <dimen name="start_15">15dp</dimen>
+    <dimen name="activition_15_sp">15sp</dimen>
+    <dimen name="activition_16">16sp</dimen>
+    <dimen name="start_77">77.7dp</dimen>
+    <dimen name="start_10">10dp</dimen>
+    <dimen name="activition_20">20dp</dimen>
+    <dimen name="activition_14">14dp</dimen>
+    <dimen name="activition_14_sp">14sp</dimen>
+    <dimen name="activition_18">18dp</dimen>
+    <dimen name="activition_18_sp">18sp</dimen>
+    <dimen name="activition_49">49.3dp</dimen>
+    <dimen name="home_tv">17sp</dimen>
+    <dimen name="activition_20_sp">20sp</dimen>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
+  -->
+<resources>
+    <color name="finance_white">#FFFFFF</color>
+    <color name="finance_activition_red">#F34B56</color>
+    <color name="finance_activition_on">#999999</color>
+    <color name="finance_buttom_title">#666666</color>
+    <color name="finance_off_view">#121212</color>
+    <color name="finance_00BAF2">#00BAF2</color>
+    <color name="finance_buttonColor">#FF6600</color>
+    <color name="finance_333333">#333333</color>
+    <color name="finance_d3d3d3">#d3d3d3</color>
+    <color name="finance_FF222222">#FF222222</color>
+    <color name="finance_FFFECD33">#FFFECD33</color>
+    <color name="finance_FFCCCCCC">#FFCCCCCC</color>
+    <color name="activition_color">#999999</color>
+    <color name="gate_FF999999">#999999</color>
+    <color name="white">#FFFFFF</color>
+    <color name="hui_color">#636363</color>
+</resources>

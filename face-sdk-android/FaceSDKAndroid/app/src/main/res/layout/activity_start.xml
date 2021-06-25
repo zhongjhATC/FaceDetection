@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/image_open"
+    tools:context="com.baidu.idl.face.main.activity.start.StartActivity">
+
+    <TextView
+        android:layout_marginBottom="@dimen/start_10"
+        android:layout_above="@+id/start_offTv"
+        android:id="@+id/start_titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/string_baidu"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/start_title"/>
+    <TextView
+        android:textSize="@dimen/bottom_font"
+        android:id="@+id/start_offTv"
+        android:layout_marginBottom="@dimen/start_77"
+        android:layout_above="@+id/start_brainTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="开       启       离       线       刷       脸       之       旅"
+        android:textColor="@color/start_blue"/>
+    <TextView
+        android:textSize="@dimen/bottom_font"
+        android:id="@+id/start_brainTv"
+        android:layout_marginBottom="@dimen/start_15"
+        android:textColor="@color/attribute_title"
+        android:text="@string/home_baidu"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

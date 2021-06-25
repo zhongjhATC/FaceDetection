@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context="com.baidu.idl.face.main.activity.start.ActivitionActivity">
+
+    <include
+        android:id="@+id/activition_titleRl"
+        layout="@layout/activity_activition_title" />
+
+    <View
+        android:id="@+id/accredit_lineView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/activition_titleRl"
+        android:layout_marginTop="14dp"
+        android:background="#333333" />
+
+    <!--离线激活-->
+    <RelativeLayout
+        android:layout_marginTop="@dimen/start_15"
+        android:layout_below="@+id/accredit_lineView"
+        android:id="@+id/accredit_offRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/accredit_Ll"
+            android:layout_marginRight="49.3dp"
+            android:layout_marginLeft="49.3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_round_import"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/start_15"
+                android:text="@string/off_technological_process"
+                android:textColor="#999999" />
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_15"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/off_technological_process_one"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_10"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/off_technological_process_two"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_10"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintThree"
+                    android:text="@string/off_technological_process_three"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_10"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="四"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintFour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/off_technological_process_four"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_10"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_marginBottom="@dimen/start_15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintFive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="五"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/off_technological_process_five"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/accredit_setTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_Ll"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/off_local_hardware"
+            android:textColor="@color/bottom_font_color"
+            android:textSize="@dimen/activition_16" />
+
+        <TextView
+            android:textSize="20sp"
+            android:id="@+id/accredit_deviceTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_setTv"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <View
+            android:id="@+id/aaccredit_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/accredit_deviceTv"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/activition_view" />
+
+        <TextView
+            android:layout_marginLeft="49.3dp"
+            android:layout_marginRight="49.3dp"
+            android:textSize="@dimen/bottom_font"
+            android:id="@+id/accredit_hintTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aaccredit_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activition_14"
+            android:textColor="@color/activition_red" />
+
+        <Button
+            android:padding="13dp"
+            android:id="@+id/accredit_offBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_hintTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/activition_49"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="@dimen/activition_49"
+            android:background="@mipmap/btn_main_normal"
+            android:text="@string/accredit_off"
+            android:textColor="@color/white"
+            android:textSize="@dimen/activition_18_sp" />
+
+        <TextView
+            android:textSize="@dimen/activition_14_sp"
+            android:id="@+id/accredit_offhiteTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_offBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/attribute_20_dp"
+            android:text="@string/off_problem"
+            android:textColor="#999999" />
+    </RelativeLayout>
+    <!--
+        在线激活
+    -->
+    <RelativeLayout
+        android:visibility="invisible"
+        android:id="@+id/accredit_onRl"
+        android:layout_below="@+id/accredit_lineView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/accredit_onLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="49.3dp"
+            android:layout_marginTop="@dimen/start_15"
+            android:layout_marginRight="49.3dp"
+            android:background="@drawable/bg_round_import"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/activition_14_sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="@dimen/start_15"
+                android:text="@string/on_technological_process"
+                android:textColor="@color/attribute_activition_on" />
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_15"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintOnOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintOnOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/off_technological_process_one"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="@dimen/start_15"
+                android:layout_marginTop="@dimen/start_10"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintOnTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintOnTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/on_technological_process_two"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hint_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_onLl"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/on_number"
+            android:textColor="@color/bottom_font_color"
+            android:textSize="@dimen/activition_16"/>
+
+        <include
+            android:layout_marginTop="@dimen/attribute_20_dp"
+            android:layout_marginLeft="@dimen/activition_49"
+            android:layout_marginRight="@dimen/activition_49"
+            android:layout_below="@+id/hint_Tv"
+            android:id="@+id/pc_1"
+            layout="@layout/layout_edittext_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="49.3dp"
+            android:layout_marginRight="49.3dp"
+            android:textSize="@dimen/bottom_font"
+            android:id="@+id/accredit_onhintTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pc_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/activition_red"/>
+
+        <Button
+            android:enabled="false"
+            android:padding="13dp"
+            android:id="@+id/accredit_onBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_onhintTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="@dimen/activition_14"
+            android:layout_marginRight="50dp"
+            android:background="@mipmap/btn_all_d"
+            android:text="@string/accredit_on"
+            android:textColor="@color/bottom_font_color"
+            android:textSize="@dimen/activition_18_sp"/>
+
+        <TextView
+            android:id="@+id/accredit_onhiteTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_onBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/off_problem"
+            android:textColor="#999999" />
+
+
+    </RelativeLayout>
+    <!--
+    应用激活
+    -->
+    <RelativeLayout
+        android:visibility="invisible"
+        android:id="@+id/accredit_useRl"
+        android:layout_below="@+id/accredit_lineView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginRight="49.3dp"
+            android:layout_marginLeft="49.3dp"
+            android:id="@+id/accredit_useLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_round_import"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/activition_14_sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/use_technological_process"
+                android:textColor="@color/attribute_activition_on" />
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_15"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintUseOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintUseOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/use_technological_process_one"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/start_10"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintUseTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintUseTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/use_technological_process_two"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="@dimen/start_15"
+                android:layout_marginTop="@dimen/start_10"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/attribute_20_dp"
+                android:layout_marginLeft="@dimen/attribute_20_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/activity_hintUseThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/activity_hintUseThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/use_technological_process_three"
+                    android:textColor="@color/attribute_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginLeft="49.3dp"
+            android:layout_marginRight="49.3dp"
+            android:textSize="@dimen/bottom_font"
+            android:layout_marginTop="@dimen/activition_14"
+            android:id="@+id/accredit_useErrorTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_useLl"
+            android:gravity="center"
+            android:textColor="@color/activition_red"/>
+
+        <Button
+            android:padding="13dp"
+            android:id="@+id/accredit_useBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_useErrorTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="@dimen/activition_14"
+            android:layout_marginRight="50dp"
+            android:background="@mipmap/btn_main_normal"
+            android:text="@string/accredit_on"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:textSize="@dimen/activition_14_sp"
+            android:id="@+id/accredit_usehiteTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/accredit_useBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/off_problem"
+            android:textColor="#999999"/>
+    </RelativeLayout>
+    <TextView
+        android:textSize="@dimen/bottom_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/start_15"
+        android:text="@string/home_baidu"
+        android:textColor="@color/attribute_title" />
+</RelativeLayout>

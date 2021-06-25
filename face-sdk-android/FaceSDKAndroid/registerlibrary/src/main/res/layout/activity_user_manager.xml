@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!--百度大脑技术支持-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:textSize="@dimen/bottom_font"
+        android:textColor="@color/bottom_font_color"
+        android:text="@string/bottom_content"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!--title中的常规布局-->
+        <RelativeLayout
+            android:id="@+id/relative_standard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="21dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_return" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="人脸库管理"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font" />
+
+            <ImageView
+                android:id="@+id/image_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_titlebar_menu"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:paddingRight="20dp"/>
+
+            <ImageView
+                android:id="@+id/image_icon_research"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_titlebar_search"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/image_menu"
+                android:paddingRight="12dp"
+                android:paddingLeft="12dp"
+                android:layout_marginRight="12dp" />
+
+            <TextView
+                android:id="@+id/text_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <!--title中的搜索布局-->
+        <LinearLayout
+            android:id="@+id/linear_title_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="9dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@drawable/bt_search_round"
+                android:paddingLeft="16dp"
+                android:paddingRight="11dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_search"
+                    android:layout_centerVertical="true"/>
+
+                <ImageView
+                    android:id="@+id/image_input_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_input_delete"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+                <EditText
+                    android:id="@+id/edit_title_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/image"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@id/image_input_delete"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:background="@null"
+                    android:textSize="16sp"
+                    android:hint="搜索"
+                    android:textColorHint="#666666"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_title_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:text="取消"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_user_manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_round_users"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/relative_title"
+        android:layout_above="@id/relative_botton_delete"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_empty"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/image_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/image_empty_content"/>
+
+        <TextView
+            android:id="@+id/text_empty"
+            android:layout_below="@id/image_empty"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="暂无内容"
+            android:textSize="15sp"
+            android:textColor="#666666"/>
+
+    </RelativeLayout>
+
+    <!--全选-->
+    <RelativeLayout
+        android:id="@+id/relative_botton_delete"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:visibility="gone"
+        android:background="#333333"
+        android:layout_alignParentBottom="true">
+
+        <CheckBox
+            android:id="@+id/check_all"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="35dp"
+            android:button="@null"
+            android:checked="false"
+            android:background="@drawable/checkbox_selector"
+            android:focusableInTouchMode="false"/>
+
+        <TextView
+            android:id="@+id/text_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"
+            android:layout_toRightOf="@id/check_all"
+            android:layout_marginLeft="8dp"
+            android:textColor="#CCCCCC"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/text_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:text="删除"/>
+    </RelativeLayout>
+
+</RelativeLayout>

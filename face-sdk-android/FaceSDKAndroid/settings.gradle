@@ -1,0 +1,11 @@
+include ':app',
+        ':facelibrary'
+include ':attendancelibrary'
+include ':attrbutelibrary'
+include ':drivermonitorlibrary'
+include ':gatelibrary'
+include ':gazelibrary'
+include ':paymentlibrary'
+include ':registerlibrary'
+include ':financelibrary'
+include ':identifylibrary'

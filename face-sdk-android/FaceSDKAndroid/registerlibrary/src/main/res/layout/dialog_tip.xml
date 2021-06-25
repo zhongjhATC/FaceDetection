@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bt_dialog_round"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+    <TextView
+            android:id="@+id/text_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    <TextView
+            android:id="@+id/text_dialog_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_dialog_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:text=""
+            android:textColor="#999999"
+            android:textSize="16sp" />
+
+    <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLine"
+            android:layout_below="@id/text_dialog_message"
+            android:layout_marginTop="25dp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_line">
+
+        <Button
+                android:id="@+id/btn_dialog_exit"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorLine"/>
+
+        <Button
+                android:id="@+id/btn_dialog_confirm"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#F34B56"
+                android:textSize="18sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

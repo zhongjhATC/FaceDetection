@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#333333"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_line"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+        <CheckBox
+            android:id="@+id/check_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:visibility="gone"
+            android:button="@null"
+            android:checked="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:background="@drawable/checkbox_selector"
+            android:focusableInTouchMode="false"/>
+
+        <com.baidu.idl.main.facesdk.registerlibrary.user.view.CircleImageView
+            android:id="@+id/circle_user"
+            android:layout_toRightOf="@id/check_btn"
+            android:layout_marginLeft="18dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/text_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/circle_user"
+            android:layout_marginLeft="15dp"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/text_user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_user_ctime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

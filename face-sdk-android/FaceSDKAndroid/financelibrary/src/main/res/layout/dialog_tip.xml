@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/finance_20"
+    android:layout_marginRight="@dimen/finance_20"
+    android:background="@drawable/bt_dialog_round">
+
+    <TextView
+        android:id="@+id/text_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/finance_28_dp"
+        android:text=""
+        android:textColor="@color/finance_white"
+        android:textSize="@dimen/finance_24_sp" />
+
+    <TextView
+        android:id="@+id/text_dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_dialog_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/finance_27_dp"
+        android:layout_marginTop="@dimen/finance_24_dp"
+        android:layout_marginRight="@dimen/finance_27_dp"
+        android:text=""
+        android:textColor="@color/finance_activition_on"
+        android:textSize="@dimen/finance_16_sp" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/finance_1_dp"
+        android:layout_below="@id/text_dialog_message"
+        android:layout_marginTop="@dimen/finance_25_dp"
+        android:background="@color/finance_333333" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_line">
+
+        <Button
+            android:id="@+id/btn_dialog_exit"
+            android:layout_width="@dimen/finance_0_dp"
+            android:layout_height="@dimen/finance_45_dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/finance_white"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="@dimen/finance_1_dp"
+            android:layout_height="match_parent"
+            android:background="@color/finance_333333" />
+
+        <Button
+            android:id="@+id/btn_dialog_confirm"
+            android:layout_width="@dimen/finance_0_dp"
+            android:layout_height="@dimen/finance_45_dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/finance_activition_red"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

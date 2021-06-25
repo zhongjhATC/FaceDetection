@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baidu.idl.main.facesdk.drivermonitor">
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="true" />
+
+    <application>
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.activity.drivermonitor.DriverMonitorActivityDrivermonitor" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.CameraDisplayAngleActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorSettingActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.FaceDetectAngleActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.FaceLivinessTypeActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorConfigQualtifyActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorLensSelectionActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.DriverMonitorLensSettingsActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.DrivermonitorMinFaceActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.MirrorSettingActivity" />
+        <activity android:name="com.baidu.idl.face.main.drivermonitor.setting.VersionMessageActivity" />
+
+
+    </application>
+
+</manifest>

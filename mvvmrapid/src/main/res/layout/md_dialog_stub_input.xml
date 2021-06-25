@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 这是用于替换MaterialDialog,因为不加
+        android:background="@android:color/transparent"
+        app:boxBackgroundColor="@android:color/transparent"
+     的话，默认是灰色背景
+ -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/md_dialog_frame_margin_horizontal"
+    android:paddingRight="@dimen/md_dialog_frame_margin_horizontal"
+    android:paddingBottom="@dimen/md_dialog_frame_margin_vertical_less">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/md_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:boxBackgroundColor="@android:color/transparent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/md_input_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            tools:text="Hello, World!" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</FrameLayout>

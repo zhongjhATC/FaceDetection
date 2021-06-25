@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/quality_detectedRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/detect_reg_layout"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp">
+
+            <com.baidu.idl.face.main.finance.view.CircleImageView
+                android:id="@+id/quality_detect_reg_image_item"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:id="@+id/quality_no_detectIv"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/ic_mask_fail" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/finance_47_dp"
+            android:layout_height="@dimen/finance_47_dp"
+            android:layout_alignEnd="@+id/detect_reg_layout"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="65dp"
+            android:background="@mipmap/waterdrop"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/no_detectTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detect_reg_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/finance_35_dp"
+            android:text="未通过质量检测"
+            android:textColor="@color/finance_FFFECD33"
+            android:textSize="33sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_detectTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp">
+
+            <TextView
+                android:id="@+id/quality_test_timeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/finance_FFCCCCCC"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/quality_detectedTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quality_test_timeTv"
+                android:layout_marginTop="@dimen/finance_10_dp"
+                android:textColor="@color/finance_FFCCCCCC"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/quality_sheltered_part"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quality_detectedTv"
+                android:layout_marginTop="@dimen/finance_10_dp"
+                android:textColor="@color/finance_FFCCCCCC"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/quality_retest_detectBtn"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="74dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/button_selector"
+        android:text="重新检测"
+        android:textColor="@color/finance_white"
+        android:textSize="27sp" />
+
+    <include layout="@layout/layout_buttom" />
+
+</RelativeLayout>

@@ -1,0 +1,2 @@
+include ':app', ':faceplatform-release'
+include ':faceplatform-ui'

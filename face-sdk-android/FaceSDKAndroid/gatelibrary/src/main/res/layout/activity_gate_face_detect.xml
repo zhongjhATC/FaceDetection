@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/logo_view"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linerbarquality"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/qc_save"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@mipmap/ic_return"
+                        android:scaleType="centerInside"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="人脸识别设置"
+                    android:textColor="@color/gate_white"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#333333"></View>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linercameratype"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/textcameratype"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="识别模型和模态"
+                            android:textColor="#999999"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <LinearLayout
+                        android:id="@+id/flRepresent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sr_liner_rectangle"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/fls_mixture_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/mixture_zero"
+                                android:layout_width="wrap_content"
+                                android:layout_height="60dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="8dp"
+                                android:button="@drawable/sr_radio_button__selector"
+                                android:paddingLeft="10dp"
+                                android:text="RGB模态生活照模型"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333" />
+
+                            <RadioButton
+                                android:id="@+id/mixture_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="60dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="8dp"
+                                android:button="@drawable/sr_radio_button__selector"
+                                android:paddingLeft="10dp"
+                                android:text="RGB模态证件照模型"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.3dp"
+                                android:background="#333333" />
+
+                            <RadioButton
+                                android:id="@+id/mixture_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="60dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="8dp"
+                                android:button="@drawable/sr_radio_button__selector"
+                                android:paddingLeft="10dp"
+                                android:text="RGB+NIR混合模态模型"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rgbandnir_ll_mixture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/gate_30_dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/ll_rgb_nir"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_rgbandnir_threshold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:text="RGB/NIR模态切换条件"
+                            android:textColor="#999999"
+                            android:textSize="15sp"></TextView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rgbandnir_mixture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/ll_rgbandnir_thRepresent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sr_liner_rectangle"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="模态切换光线阈值"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp"></TextView>
+
+                            <ImageView
+                                android:id="@+id/th_rgbandnir_LiveDecrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="140dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_minus" />
+
+                            <EditText
+                                android:id="@+id/th_rgbandnir_LiveEtThreshold"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:alpha="0.6"
+                                android:background="@drawable/sr_liner_rectangle_black"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:minWidth="60dp"
+                                android:text="50"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/th_rgbandnir_LiveIncrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_add" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_marginRight="@dimen/gate_30_dp"
+                    android:layout_marginLeft="@dimen/gate_30_dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/linerrecognizethrehold"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvthreshold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="识别阈值"
+                            android:textColor="#999999"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/cw_cameratype"
+                            android:layout_width="@dimen/activition_20"
+                            android:layout_height="@dimen/activition_20"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/icon_setting_question" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sr_liner_rectangle"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/th_LiveTvThreshold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="生活照模型阈值"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp"></TextView>
+
+                            <ImageView
+                                android:id="@+id/th_LiveDecrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="140dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_minus" />
+                            <ImageView
+                                android:visibility="gone"
+                                android:id="@+id/th_LiveDecrease_Ash_disposal"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="140dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/gray_minus_sign" />
+
+                            <EditText
+                                android:id="@+id/th_LiveEtThreshold"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:alpha="0.6"
+                                android:background="@drawable/sr_liner_rectangle_black"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:minWidth="60dp"
+                                android:text="80"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp" />
+
+
+                            <ImageView
+                                android:id="@+id/th_LiveIncrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_add" />
+                            <ImageView
+                                android:visibility="gone"
+                                android:id="@+id/th_LiveIncrease_Ash_disposal"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/adding_sign_to_gray" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.3dp"
+                            android:background="#333333"></View>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/th_IDTvThreshold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="证件照模型阈值"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp"></TextView>
+
+                            <ImageView
+                                android:id="@+id/th_IDDecrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="140dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_minus" />
+
+                            <ImageView
+                                android:visibility="gone"
+                                android:id="@+id/th_IDDecrease_Ash_disposal"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="140dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/gray_minus_sign" />
+
+                            <EditText
+                                android:id="@+id/th_IDEtThreshold"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:alpha="0.6"
+                                android:background="@drawable/sr_liner_rectangle_black"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:minWidth="60dp"
+                                android:text="80"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/th_IDIncrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_add" />
+
+                            <ImageView
+                                android:id="@+id/th_IDIncrease_Ash_disposal"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/adding_sign_to_gray" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.3dp"
+                            android:background="#333333"></View>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/mixture_IDTvThreshold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="RGB+NIR混合模态阈值"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp"></TextView>
+
+
+                            <ImageView
+                                android:id="@+id/mixture_IDDecrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="78dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_minus" />
+
+                            <ImageView
+                                android:visibility="gone"
+                                android:id="@+id/mixture_IDDecrease_Ash_disposal"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="78dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/gray_minus_sign" />
+
+                            <EditText
+                                android:id="@+id/mixture_IDEtThreshold"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:alpha="0.6"
+                                android:background="@drawable/sr_liner_rectangle_black"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:minWidth="60dp"
+                                android:text="80"
+                                android:textColor="@color/gate_white"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:id="@+id/mixture_IDIncrease"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/icon_setting_add" />
+
+                            <ImageView
+                                android:visibility="gone"
+                                android:id="@+id/mixture_IDIncrease_Ash_disposal"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="centerInside"
+                                android:src="@mipmap/adding_sign_to_gray" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/logo_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activition_20"
+        android:layout_above="@+id/logo_text" />
+
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="23dp"
+        android:alpha="0.4"
+        android:gravity="center_horizontal"
+        android:text="— 百度大脑技术支持 —"
+        android:textColor="#666666"
+        android:textSize="@dimen/bottom_font" />
+
+    <View
+        android:id="@+id/popShowRely"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

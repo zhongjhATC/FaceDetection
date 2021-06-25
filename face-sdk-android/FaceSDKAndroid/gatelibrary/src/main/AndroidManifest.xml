@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.baidu.idl.main.facesdk.gatelibrary">
+
+    <!--往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--在sdcard中创建/删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <!--往sdcard中读取数据的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application>
+        <activity android:name="com.baidu.idl.main.facesdk.activity.gate.FaceRgbNirDepthGataActivity"></activity>
+        <activity android:name="com.baidu.idl.main.facesdk.setting.GateFaceDetectActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.VersionMessageActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.CameraDisplayAngleActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.FaceDetectAngleActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.MirrorSettingActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.FaceLivinessTypeActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.GateConfigQualtifyActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.GateMinFaceActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.GateLensSettingsActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.GateLensSelectionActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.setting.GateSettingActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.activity.gate.FaceRGBGateActivity" />
+        <activity android:name="com.baidu.idl.main.facesdk.activity.gate.FaceNIRGateActivriy" />
+        <activity android:name="com.baidu.idl.main.facesdk.activity.gate.FaceDepthGateActivity" />
+    </application>
+
+</manifest>

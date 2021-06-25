@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+}
+
+dependencies {
+
+    // 单元测试
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //region ------------------------------------------------- 官方库 -------------------------------------------------
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'com.google.android.material:material:1.4.0-beta01'
+    api 'androidx.constraintlayout:constraintlayout:2.0.4'
+    // Google LiveData和ViewModel组件
+    api "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
+    api "androidx.lifecycle:lifecycle-livedata:2.3.1"
+
+    //endregion ------------------------------------------------- 官方库 -------------------------------------------------
+
+    //region ------------------------------------------------- 常用网络库 -------------------------------------------------
+
+    // rxjava 混淆#RxJava RxAndroid
+    api 'io.reactivex.rxjava2:rxjava:2.2.12'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // rx系列与View生命周期同步 混淆#RxLifecycle
+    api('com.trello.rxlifecycle2:rxlifecycle:2.2.2') {
+        exclude group: 'com.android.support'
+    }
+    api('com.trello.rxlifecycle2:rxlifecycle-components:2.2.2') {
+        exclude group: 'com.android.support'
+    }
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    // rxBinding
+    api('com.jakewharton.rxbinding2:rxbinding:2.1.1') {
+        exclude group: 'com.android.support'
+    }
+    // rx权限请求
+    api('com.github.tbruyelle:rxpermissions:0.10.2') {
+        exclude group: 'com.android.support'
+    }
+
+    // network 混淆#okhttp #retrofit
+    api 'com.squareup.okhttp3:okhttp:4.8.1' // com.squareup.okhttp3:okhttp:4.9.1 会报错
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    //endregion ------------------------------------------------- 常用网络库 -------------------------------------------------
+
+    //region ------------------------------------------------- 其他库 -------------------------------------------------
+
+    // 内容存储库，比SharedPreferences快 混淆#com.tencent.mmkv https://github.com/Tencent/MMKV/blob/master/README_CN.md
+    api 'com.tencent:mmkv-static:1.2.7'
+
+    // glide图片加载库
+    api('com.github.bumptech.glide:glide:4.11.0') {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // recyclerview的databinding套装 混淆#bindingcollectionadapter
+    api 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:3.0.0-beta3'
+    api 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:3.0.0-beta3'
+
+    // 异常捕获 https://github.com/Ereza/CustomActivityOnCrash
+    api 'cat.ereza:customactivityoncrash:2.3.0'
+
+//    // dialog https://github.com/afollestad/material-dialogs
+    api 'com.afollestad.material-dialogs:core:3.3.0'
+    api 'com.afollestad.material-dialogs:input:3.3.0'
+    api 'com.afollestad.material-dialogs:files:3.3.0'
+    api 'com.afollestad.material-dialogs:color:3.3.0'
+    api 'com.afollestad.material-dialogs:datetime:3.3.0'
+    api 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
+    api 'com.afollestad.material-dialogs:lifecycle:3.3.0'
+
+    // 工具类 https://github.com/Blankj/AndroidUtilCode 解释https://blankj.com/2016/07/31/android-utils-code/
+    api 'com.blankj:utilcodex:1.30.1'
+
+    //endregion ------------------------------------------------- 其他库 -------------------------------------------------
+
+
+}

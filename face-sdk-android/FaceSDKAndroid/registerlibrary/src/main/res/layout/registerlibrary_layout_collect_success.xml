@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_collect_success"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/relative_bottom_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/ic_bg_bottom_pattern"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="73dp">
+
+        <com.baidu.idl.main.facesdk.registerlibrary.user.view.CircleImageView
+            android:id="@+id/circle_head"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/text_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/circle_head"
+            android:layout_marginTop="22dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:textColor="#999999"
+            android:text="请输入用户名"/>
+
+        <RelativeLayout
+            android:id="@+id/relative_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_collect"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginRight="49dp">
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/et_round"
+                android:paddingTop="13dp"
+                android:paddingBottom="13dp"
+                android:hint="用户名"
+                android:textColorHint="#666666"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <ImageView
+                android:id="@+id/image_input_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="13dp"
+                android:visibility="gone"
+                android:src="@mipmap/icon_input_delete"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F34B60"
+            android:textSize="12sp"
+            android:layout_below="@id/relative_input"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="该用户名已被注册，请使用其它用户名"
+            android:visibility="invisible"/>
+
+        <Button
+            android:id="@+id/btn_collect_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_error"
+            android:layout_marginTop="14dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/btn_all_d"
+            android:layout_marginLeft="49dp"
+            android:layout_marginRight="49dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:text="确认"
+            android:textColor="#666666"
+            android:textSize="18sp"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+    <!--百度大脑技术支持-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:textSize="@dimen/bottom_font"
+        android:textColor="@color/bottom_font_color"
+        android:text="@string/bottom_content"/>
+
+</RelativeLayout>

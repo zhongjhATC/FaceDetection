@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.idl.face.main.attribute.camera.AttrbuteAutoTexturePreviewView
+        android:id="@+id/fa_auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextureView
+        android:id="@+id/draw_detect_face_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/search_title"
+        layout="@layout/layout_title_gate" />
+
+    <LinearLayout
+        android:id="@+id/atr_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/atrrltemp"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/atrRlDisplay"
+                android:layout_width="110dp"
+                android:layout_height="82dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/face_attribute"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></ImageView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:alpha="0.7"
+                    android:background="@drawable/attribute_liner_tr_radious"
+                    android:orientation="horizontal"
+                    tools:ignore="RtlCompat"></RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:text="RGB视频流"
+                    android:textColor="@color/attribute_white"
+                    android:textSize="14sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/atrLinerTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="450dp"
+                android:layout_height="60dp"
+                android:alpha="0.7"
+                android:background="@drawable/attribute_liner_all_radious"
+                android:orientation="vertical"
+                android:paddingTop="10dp"></LinearLayout>
+
+            <TextView
+                android:id="@+id/atrDetectTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="检测耗时"
+                android:textColor="@color/attribute_white"
+                android:textSize="12sp"></TextView>
+
+            <TextView
+                android:id="@+id/atrToalTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:text="总耗时"
+                android:textColor="@color/attribute_white"
+                android:textSize="12sp"></TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/showAtrMessage"
+        android:layout_width="156dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="50dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:background="@drawable/attribute_liner_all_deb_radious"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="17dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/atrSex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别"
+                android:textColor="@color/attribute_white"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/atrAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="年龄"
+                android:textColor="@color/attribute_white"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/atrAccessory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="眼镜"
+                android:textColor="@color/attribute_white"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/atrEmotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="表情"
+                android:textColor="@color/attribute_white"
+                android:textSize="16sp"></TextView>
+
+            <TextView
+                android:id="@+id/atrMask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="口罩"
+                android:textColor="@color/attribute_white"
+                android:textSize="16sp"></TextView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/home_baiduTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:alpha="0.4"
+        android:text="@string/home_baidu"
+        android:textColor="@color/attribute_title"
+        android:textSize="@dimen/bottom_font" />
+</RelativeLayout>

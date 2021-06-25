@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/yvlan_relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="bottom"
+    android:background="@mipmap/ic_bg_bottom_pattern"
+    android:gravity="center_horizontal"
+    android:visibility="visible">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:alpha="0.4"
+        android:gravity="center_horizontal"
+        android:text="— 百度大脑技术支持 —"
+        android:textColor="#666666"
+        android:textSize="@dimen/finance_12_sp" />
+</RelativeLayout>

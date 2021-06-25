@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/linerbarmirror"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/button_mirror_save"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@mipmap/ic_return"
+                    android:scaleType="centerInside" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_mirror_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="镜像设置"
+                android:textColor="@color/gate_white"
+                android:textSize="25sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="#333333"></View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_mirror_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linerdetectmirror"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvdetectmirror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="人脸检测镜像"
+                    android:textColor="#999999"
+                    android:textSize="15sp"></TextView>
+
+                <Button
+                    android:id="@+id/cwdetectmirror"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/icon_setting_question"></Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp">
+
+                <LinearLayout
+                    android:id="@+id/mirrorRepresent"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/sr_liner_rectangle"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="检测框镜像"
+                        android:textColor="@color/gate_white"
+                        android:textSize="20sp" />
+
+                    <Switch
+                        android:id="@+id/switch_detect_frame"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="235dp"
+                        android:thumb="@drawable/setting_switch_thumb"
+                        android:track="@drawable/setting_switch_track_selector" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linercameradisplaymirror"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvcameradisplaymirror"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="视频流回显/图像帧镜像"
+                    android:textColor="#999999"
+                    android:textSize="15sp"></TextView>
+
+                <Button
+                    android:id="@+id/cwcameradisplaymirror"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@mipmap/icon_setting_question"></Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/sr_liner_rectangle"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="RGB视频流/图像帧镜像"
+                            android:textColor="@color/gate_white"
+                            android:textSize="20sp" />
+
+                        <Switch
+                            android:id="@+id/switch_mirror_rgb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="130dp"
+                            android:thumb="@drawable/setting_switch_thumb"
+                            android:track="@drawable/setting_switch_track_selector" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="#333333"></View>
+
+                    <LinearLayout
+                        android:id="@+id/linear_mirror_nir"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="NIR视频流/图像帧镜像"
+                            android:textColor="@color/gate_white"
+                            android:textSize="20sp" />
+
+                        <Switch
+                            android:id="@+id/switch_mirror_nir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="137dp"
+                            android:thumb="@drawable/setting_switch_thumb"
+                            android:track="@drawable/setting_switch_track_selector" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/logo_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="23dp"
+            android:alpha="0.4"
+            android:gravity="center_horizontal"
+            android:text="— 百度大脑技术支持 —"
+            android:textColor="#666666"
+            android:textSize="@dimen/bottom_font" />
+    </RelativeLayout>
+</LinearLayout>

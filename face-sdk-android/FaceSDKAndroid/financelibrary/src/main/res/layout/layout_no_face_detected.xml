@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false">
+
+    <RelativeLayout
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="@dimen/finance_50_dp"
+        android:layout_marginLeft="@dimen/finance_50_dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/face_detected_round">
+
+        <ImageView
+            android:id="@+id/no_detectIv"
+            android:layout_width="@dimen/finance_108_dp"
+            android:layout_height="@dimen/finance_108_dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:background="@mipmap/ic_mask_fail" />
+
+        <ImageView
+            android:layout_width="@dimen/finance_47_dp"
+            android:layout_height="@dimen/finance_47_dp"
+            android:layout_alignEnd="@+id/no_detectIv"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="65dp"
+            android:background="@mipmap/waterdrop"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/no_detectTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_detectIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="未检测到人脸"
+            android:textColor="@color/finance_FFFECD33"
+            android:textSize="33sp" />
+
+        <Button
+            android:id="@+id/retest_detectBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@+id/no_detectTv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/button_selector"
+            android:text="重新检测"
+            android:textColor="@color/finance_white"
+            android:textSize="27sp" />
+
+        <Button
+            android:id="@+id/back_homeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_below="@+id/retest_detectBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="@dimen/finance_73_dp"
+            android:background="@drawable/button_selector_grey"
+            android:text="回到首页"
+            android:textColor="@color/finance_white"
+            android:textSize="27sp" />
+    </RelativeLayout>
+</RelativeLayout>

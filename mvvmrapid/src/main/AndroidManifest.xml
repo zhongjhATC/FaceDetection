@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhongjh.mvvmrapid">
+
+    <!-- 允许应用获取网络信息状态，如当前的网络连接是否有效。 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问电话状态，高德地图也需要这个权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许应用可以访问网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+
+        <activity
+            android:name=".ui.error.ErrorActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+
+
+</manifest>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/logo_view"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/topliner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/gate_settting_back"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_return"></ImageView>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="设置"
+                    android:textColor="@color/gate_white"
+                    android:textSize="25sp"></TextView>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#333333"></View>
+
+        <View style="@style/configViewtyle"></View>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/gate_face_detection"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@drawable/sr_liner_rectangle">
+
+                            <TextView
+                                style="@style/configTextStyle"
+                                android:text="@string/gate_face_detection"></TextView>
+
+                            <LinearLayout style="@style/configInnerImageLayout">
+
+                                <ImageView style="@style/configInnerImage" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.3dp"
+                            android:background="#333333" />
+
+                        <LinearLayout
+                            android:id="@+id/gate_config_qualtify"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@drawable/sr_liner_rectangle">
+
+                            <TextView
+                                style="@style/configTextStyle"
+                                android:text="@string/gate_quality_inspection"></TextView>
+
+                            <LinearLayout style="@style/configInnerImageLayout">
+
+                                <TextView
+                                    android:id="@+id/tvSettingQualtify"
+                                    style="@style/configTextStyleTwo"
+                                    android:layout_marginRight="10dp"
+                                    android:text="开启"></TextView>
+
+                                <ImageView style="@style/configInnerImage"></ImageView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.3dp"
+                            android:background="#333333" />
+
+                        <LinearLayout
+                            android:id="@+id/gate_huoti_detection"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:background="@drawable/sr_liner_rectangle">
+
+                            <TextView
+                                style="@style/configTextStyle"
+                                android:text="@string/gate_huoti_detection"></TextView>
+
+                            <LinearLayout style="@style/configInnerImageLayout">
+
+                                <TextView
+                                    android:id="@+id/tvSettingLiviness"
+                                    style="@style/configTextStyleTwo"
+                                    android:layout_marginRight="10dp"
+                                    android:text="开启"></TextView>
+
+                                <ImageView style="@style/configInnerImage"></ImageView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View style="@style/configViewtyle" />
+
+
+                    </LinearLayout>
+
+                    <View style="@style/configViewtyle" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/gate_face_recognition"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/sr_liner_rectangle">
+
+                        <TextView
+                            style="@style/configTextStyle"
+                            android:text="@string/gate_face_recognition"></TextView>
+
+                        <LinearLayout style="@style/configInnerImageLayout">
+
+                            <ImageView style="@style/configInnerImage" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:background="#333333" />
+
+                <LinearLayout
+                    android:id="@+id/gate_lens_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/sr_liner_rectangle">
+
+                    <TextView
+                        style="@style/configTextStyle"
+                        android:text="@string/gate_lens_settings"></TextView>
+
+                    <LinearLayout style="@style/configInnerImageLayout">
+
+                        <ImageView style="@style/configInnerImage" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View style="@style/configViewtyle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sr_liner_rectangle"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/configVersionMessage"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp">
+
+                            <TextView
+                                style="@style/configTextStyle"
+                                android:text="版本信息"></TextView>
+
+                            <LinearLayout style="@style/configInnerImageLayout">
+
+                                <TextView
+                                    android:id="@+id/tvSettingEffectiveDate"
+                                    style="@style/configTextStyleTwo"
+                                    android:layout_marginRight="10dp"
+                                    android:text="有效期至2020-12-31日"></TextView>
+
+                                <ImageView style="@style/configInnerImage"></ImageView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/logo_view"
+        style="@style/configViewtyle"
+        android:layout_above="@+id/logo_text"></View>
+
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="23dp"
+        android:alpha="0.4"
+        android:gravity="center_horizontal"
+        android:text="— 百度大脑技术支持 —"
+        android:textColor="#666666"
+        android:textSize="@dimen/bottom_font" />
+
+    <View
+        android:id="@+id/popShowRely"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"></View>
+</RelativeLayout>

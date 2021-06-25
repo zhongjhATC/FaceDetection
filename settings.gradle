@@ -1,0 +1,9 @@
+include ':core'
+include ':mvvmrapid'
+include ':app'
+include ':faceplatform-release'
+include ':faceplatform-ui'
+project(':core').projectDir = new File(rootDir, 'baidu_speech_ASR_V3_20201116_93b546d_3.4.1/core/')
+project(':faceplatform-release').projectDir = new File(rootDir, 'FaceSDKSample_Android/faceplatform-release/')
+project(':faceplatform-ui').projectDir = new File(rootDir, 'FaceSDKSample_Android/faceplatform-ui/')
+rootProject.name = "FaceDetection"

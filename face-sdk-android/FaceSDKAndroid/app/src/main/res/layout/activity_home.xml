@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context="com.baidu.idl.face.main.activity.start.HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/home_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/home_title"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/home_settingImg"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="21dp"
+            android:visibility="gone"
+            android:background="@mipmap/icon_titlebar_setting" />
+
+        <ImageView
+            android:id="@+id/home_menuImg"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:clickable="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="21dp"
+            android:src="@mipmap/icon_titlebar_menu" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/home_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_below="@+id/home_title"
+        android:background="@color/attribute_colorLine" />
+
+
+    <RelativeLayout
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/home_dataTv"
+        android:layout_below="@+id/home_view"
+        android:layout_marginTop="6.7dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/home_gateLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:id="@+id/home_gateRl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/home_gateIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_1" />
+
+                <TextView
+                    android:id="@+id/home_gateTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_gateIv"
+                    android:layout_marginLeft="@dimen/start_15"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_gate"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_gateIv"
+                    android:layout_marginLeft="@dimen/start_15"
+                    android:layout_marginBottom="@dimen/start_10"
+                    android:text="GATE MODE"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:id="@+id/home_checkRl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/home_gateRl">
+
+                <ImageView
+                    android:id="@+id/home_checkIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_2" />
+
+                <TextView
+                    android:id="@+id/home_checkTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_checkIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_check"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_checkIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_check_english"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_payLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/home_gateLl"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:id="@+id/home_payRl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/home_payIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_3" />
+
+                <TextView
+                    android:id="@+id/home_payTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_payIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_pay"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_payIv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_pay_english"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:id="@+id/home_livenessRl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/home_payRl">
+
+                <ImageView
+                    android:id="@+id/home_livenessIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_9" />
+
+                <TextView
+                    android:id="@+id/home_livenessTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_livenessIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_liveness"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_livenessIv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_liveness_english"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_personLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/home_payLl"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:id="@+id/home_personRl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/home_personIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_5" />
+
+                <TextView
+                    android:id="@+id/home_personTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_personIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_person"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_personIv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_person_english"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/home_driveRl"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/home_personRl"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/home_driveIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_6" />
+
+                <TextView
+                    android:id="@+id/home_driveTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_driveIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_drive"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_driveIv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_drive_english"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/home_personLl"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/home_attentionRl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/home_attentionIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_7" />
+
+                <TextView
+                    android:id="@+id/home_attentionTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_attentionIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_attention"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_attentionIv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_attention_english"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:id="@+id/home_attributeRl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/home_payRl">
+
+                <ImageView
+                    android:id="@+id/home_attributeIv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_homepage_4" />
+
+                <TextView
+                    android:id="@+id/home_attributeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_attributeIv"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="31dp"
+                    android:text="@string/home_attribute"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/home_tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/home_attributeIv"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/home_attribute_english"
+                    android:textColor="@color/attribute_activition_on"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/home_attentionRl"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/home_faceTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/bg_homepage_8" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/home_face"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_tv" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/home_faceLibraryTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/bg_homepage_8" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/home_faceLibrary"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/home_tv" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/home_dataTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/home_baiduTv"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="版本有效期至2020年12月30日"
+        android:textColor="#999999"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/home_baiduTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:text="@string/home_baidu"
+        android:textColor="@color/attribute_title"
+        android:textSize="12sp" />
+</RelativeLayout>

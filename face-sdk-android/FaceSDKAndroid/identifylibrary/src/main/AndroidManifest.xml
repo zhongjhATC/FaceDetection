@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baidu.idl.main.facesdk.identifylibrary">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="true" />
+
+    <application>
+        <activity android:name=".testimony.FaceRGBPersonActivity"></activity>
+        <activity android:name=".testimony.FaceIRTestimonyActivity"></activity>
+        <activity android:name=".testimony.FaceDepthTestimonyActivity"></activity>
+        <activity android:name=".testimony.FaceRGBIRDepthTestimonyActivity"></activity>
+        <activity android:name=".setting.CameraDisplayAngleActivity"></activity>
+        <activity android:name=".setting.IdentifySettingActivity"></activity>
+        <activity android:name=".setting.IdentifyConfigQualtifyActivity"></activity>
+        <activity android:name=".setting.IdentifyLensSelectionActivity"></activity>
+        <activity android:name=".setting.IdentifyFaceDetectActivity"></activity>
+        <activity android:name=".setting.IdentifyLensSettingsActivity"></activity>
+        <activity android:name=".setting.MinFaceActivity"></activity>
+        <activity android:name=".setting.MirrorSettingActivity"></activity>
+        <activity android:name=".setting.VersionMessageActivity"></activity>
+        <activity android:name=".setting.FaceLivinessTypeActivity"></activity>
+        <activity android:name=".setting.FaceDetectAngleActivity"></activity>
+    </application>
+
+</manifest>

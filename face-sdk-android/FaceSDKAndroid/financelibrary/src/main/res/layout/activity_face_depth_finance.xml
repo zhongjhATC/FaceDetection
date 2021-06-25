@@ -1,0 +1,277 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.idl.face.main.finance.camera.AutoTexturePreviewView
+        android:id="@+id/auto_camera_preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/yvlan_relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:background="@color/finance_off_view" />
+
+    <TextureView
+        android:id="@+id/draw_detect_face_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/yvlan_relativeLayout"
+        android:layout_centerHorizontal="true" />
+    <!--圆形进度条-->
+    <RelativeLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/yvlan_relativeLayout">
+
+        <ImageView
+            android:id="@+id/progress_bar_view"
+            android:layout_width="@dimen/finance_355_dp"
+            android:layout_height="@dimen/finance_355_dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_loading_grey" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pre_toast_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/yvlan_relativeLayout"
+        android:gravity="center_horizontal"
+        android:text="保持面部在取景框内"
+        android:textColor="@color/finance_white"
+        android:textSize="@dimen/finance_22_sp" />
+
+    <!--送检图片-->
+    <ImageView
+        android:id="@+id/face_detect_image_view"
+        android:layout_width="@dimen/finance_110_dp"
+        android:layout_height="@dimen/finance_83_dp"
+        android:layout_above="@+id/kaifa_relativeLayout"
+        android:layout_marginLeft="@dimen/finance_10_dp"
+        android:layout_marginBottom="@dimen/finance_5_dp"
+        android:background="@drawable/gate_imageview_radius"
+        android:src="@mipmap/ic_image_video"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/detect_surface_text"
+        android:layout_width="@dimen/finance_110_dp"
+        android:layout_height="@dimen/finance_23_dp"
+        android:layout_above="@+id/kaifa_relativeLayout"
+        android:layout_marginLeft="@dimen/finance_10_dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/relativelayout_radius"
+        android:text=" RGB图片帧"
+        android:textColor="@color/finance_white"
+        android:textSize="@dimen/finance_14_sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/is_check_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/face_detect_image_view"
+        android:layout_alignBottom="@+id/detect_surface_text"
+        android:layout_marginEnd="@dimen/finance_2_dp"
+        android:visibility="gone"
+        tools:ignore="RtlCompat" />
+
+    <org.openni.android.OpenNIView
+        android:id="@+id/depth_camera_preview_view"
+        android:layout_width="110dp"
+        android:layout_height="83dp"
+        android:layout_above="@+id/kaifa_relativeLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/finance_10_dp"
+        android:layout_marginBottom="@dimen/finance_5_dp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/depth_surface_text"
+        android:layout_width="@dimen/finance_110_dp"
+        android:layout_height="@dimen/finance_23_dp"
+        android:layout_above="@+id/kaifa_relativeLayout"
+        android:layout_alignStart="@+id/ir_camera_preview_view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/finance_10_dp"
+        android:layout_marginBottom="@dimen/finance_5_dp"
+        android:background="@drawable/relativelayout_radius"
+        android:text=" Depth图片帧"
+        android:textColor="@color/finance_white"
+        android:textSize="@dimen/finance_14_sp"
+        android:visibility="gone"
+        tools:ignore="RtlCompat" />
+
+    <ImageView
+        android:id="@+id/depth_is_check_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/depth_camera_preview_view"
+        android:layout_alignBottom="@+id/depth_camera_preview_view"
+        android:layout_marginEnd="@dimen/finance_2_dp"
+        android:visibility="gone"
+        tools:ignore="RtlCompat" />
+
+    <RelativeLayout
+        android:id="@+id/layout_compare_status"
+        android:layout_width="150dp"
+        android:layout_height="@dimen/finance_44_dp"
+        android:layout_above="@+id/face_detect_image_view"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gate_radius_compare"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_compare_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/finance_00BAF2"
+            android:textSize="@dimen/finance_20_sp" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/search_title"
+        layout="@layout/layout_title_finance" />
+
+    <View
+        android:id="@+id/search_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/search_title"
+        android:background="#333333" />
+
+    <!--********** 信息展示部分 **********-->
+    <!--开发模式-->
+    <RelativeLayout
+        android:id="@+id/kaifa_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/finance_127_dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/finance_10_dp"
+        android:layout_marginRight="@dimen/finance_10_dp"
+        android:layout_marginBottom="@dimen/finance_5_dp"
+        android:background="@drawable/finance_radius"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/finance_15">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/finance_20"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_detect_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="检测耗时：0ms"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_rgb_live_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_detect"
+                    android:text="RGB活体检测耗时：0ms"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_rgb_live_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RGB活体检测结果：false"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_nir_live_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_detect"
+                    android:text="NIR活体检测耗时：0ms"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_nir_live_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NIR活体检测结果：false"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/id_view"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/id_view"
+                android:layout_marginLeft="@dimen/finance_20"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_depth_live_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Depth活体检测耗时：0ms"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_depth_live_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Depth活体检测结果：false"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+
+                <TextView
+                    android:id="@+id/tv_all_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总耗时：0ms"
+                    android:textColor="@color/finance_white"
+                    android:textSize="@dimen/finance_12_sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/layout_buttom"
+        android:visibility="visible" />
+
+    <include
+        layout="@layout/layout_hint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_title_view"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/finance_no_detect"
+        layout="@layout/layout_no_detect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_title_view"
+        android:visibility="gone" />
+</RelativeLayout>

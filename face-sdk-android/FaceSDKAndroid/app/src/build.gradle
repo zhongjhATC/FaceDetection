@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.baidu.idl.face.demo"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 5
+        versionName "5.0.0"
+        multiDexEnabled true
+
+        ndk {
+            moduleName "facesdk"
+            ldLibs "log"
+            abiFilters "armeabi-v7a" // "armeabi", "x86", "arm64-v8a"
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file("signature/facesdk-library.keystore")
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+        release {
+            storeFile file("signature/facesdk-library.keystore")
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            debuggable true
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+            jniDebuggable false
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation project(path: ':registerlibrary')
+    implementation project(path: ':gazelibrary')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.google.code.gson:gson:2.6.2'
+    implementation 'me.jessyan:autosize:0.9.5'
+
+//    compile files('libs/orbbec_module-debug.aar')
+//    compile files('libs/picozensesdk-release.aar')
+//    implementation files('libs/SocketClient.jar')
+
+    implementation project(':facelibrary')
+    implementation project(':gatelibrary')
+    implementation project(':paymentlibrary')
+    implementation project(':attrbutelibrary')
+    implementation project(':drivermonitorlibrary')
+
+}

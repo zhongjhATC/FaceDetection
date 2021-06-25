@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relative_register_success"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/relative_bottom_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/ic_bg_bottom_pattern"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_reg_suc_head"
+        android:layout_width="114dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="88dp"
+        android:layout_centerHorizontal="true">
+
+        <com.baidu.idl.main.facesdk.registerlibrary.user.view.CircleImageView
+            android:id="@+id/circle_reg_suc_head"
+            android:layout_centerInParent="true"
+            android:layout_width="108dp"
+            android:layout_height="108dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_mask_success"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_icon_success_star"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_reg_suc_head"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="22sp"
+        android:textColor="#00BAF2"
+        android:text="人脸注册成功"/>
+
+    <Button
+        android:id="@+id/btn_return_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginBottom="80dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="@drawable/button_selector_grey"
+        android:text="返回"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_continue_reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_return_home"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="@drawable/button_selector"
+        android:text="继续注册"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <!--百度大脑技术支持-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:textSize="@dimen/bottom_font"
+        android:textColor="@color/bottom_font_color"
+        android:text="@string/bottom_content"/>
+
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/finance_56_dp"
+    android:alpha="0.9"
+    android:background="@color/finance_off_view">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/finance_15"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/finance_5_dp"
+        android:src="@mipmap/ic_return"
+        android:text="返回"
+        android:textColor="@color/finance_white" />
+
+
+    <ImageView
+        android:id="@+id/preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/finance_12_dp"
+        android:layout_below="@+id/preview_text"
+        android:layout_alignLeft="@id/preview_text"
+        android:layout_alignRight="@id/preview_text"
+        android:layout_marginTop="-12dp"
+        android:src="@mipmap/ic_highlight" />
+    <TextView
+        android:id="@+id/preview_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/finance_35_dp"
+        android:layout_marginStart="@dimen/finance_50_dp"
+        android:layout_toEndOf="@+id/btn_back"
+        android:layout_centerVertical="true"
+        android:text="预览模式"
+        android:textColor="@color/finance_d3d3d3"
+        android:textSize="@dimen/finance_title_font" />
+
+
+
+    <ImageView
+        android:id="@+id/develop_view"
+        android:layout_width="@dimen/finance_102_dp"
+        android:layout_height="@dimen/finance_12_dp"
+        android:layout_below="@+id/develop_text"
+        android:layout_alignLeft="@id/develop_text"
+        android:layout_alignRight="@id/develop_text"
+        android:layout_marginTop="-12dp"
+        android:src="@mipmap/ic_highlight"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/develop_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/finance_35_dp"
+        android:layout_marginStart="@dimen/finance_60_dp"
+        android:layout_toEndOf="@+id/preview_text"
+        android:text="开发模式"
+        android:layout_centerVertical="true"
+        android:textColor="#999999"
+        android:textSize="@dimen/finance_title_font" />
+
+    <ImageView
+        android:id="@+id/btn_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/finance_28_dp"
+        android:layout_marginLeft="@dimen/finance_10_dp"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/finance_5_dp"
+        android:src="@mipmap/ic_setting" />
+
+</RelativeLayout>

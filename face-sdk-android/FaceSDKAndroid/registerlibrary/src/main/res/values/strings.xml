@@ -1,0 +1,168 @@
+<resources>
+    <string name="app_name">BaiDuFace Demo</string>
+
+    <string name="face_setting">设置</string>
+    <string name="face_id">设备ID</string>
+    <string name="face_track">人脸检测</string>
+    <string name="face_recognize">识别</string>
+    <string name="face_livness">动作活体</string>
+    <string name="face_image">图片比对</string>
+    <string name="face_image_attrs">图片活体属性</string>
+    <string name="face_image_gaze">图片注意力</string>
+    <string name="face_image_emotion">图片情绪</string>
+    <string name="face_image_quality">图片质量</string>
+    <string name="face_head_pose">图片姿态角</string>
+    <string name="face_id_phone">证件照</string>
+    <string name="face_ir">红外比对</string>
+    <string name="face_ir_silent">红外活体</string>
+    <string name="face_process">图片处理</string>
+    <string name="face_depth">深度图</string>
+    <string name="face_test">多线程</string>
+    <string name="face_attrs">属性</string>
+    <string name="face_image_crop">图片裁剪</string>
+
+    <string name="detectInfoTxt">预览区域内人脸不全</string>
+
+    <string name="min_face_size">最小检测人脸：%s px</string>
+    <string name="image_size"> 分辨率：%s p</string>
+    <string name="silent_live_type">活体模式：%s</string>
+    <string name="feature_threshold_value">识别阈值：%s 分</string>
+    <string name="rgb_live_threshold_value">RGB 活体阈值：%s</string>
+    <string name="nir_live_threshold_value">NIR 活体阈值：%s</string>
+    <string name="depth_live_threshold_value">Depth 活体阈值：%s</string>
+    <string name="detect_type">检测形式：%s</string>
+
+    <string name="import_tip_1">在SD卡根目录创建一个文件夹，命名为Face-Import</string>
+    <string name="import_tip_2">按需导入图片，命名为username.jpg</string>
+    <string name="import_tip_3">将人脸图片放在Face-Import的文件夹中</string>
+    <string name="import_tip_4">点击下方按钮导入数据</string>
+
+    <string name="search_text">通过视频流方式，完成实时的动态人脸识别,
+        \n并集合了动态的活体检测，确保识别过程的\n安全性</string>
+
+    <string name="reigster_text">基于指定质量检测要求，完成人脸图像的注册
+        \n注册的人脸数据存于本地，如实际商用过程中
+        \n请使用数据接口完成特征值或图片同步</string>
+
+    <string name="user_text">包含人脸注册、更新、删除等业务能力，此处
+        \n操作的人脸信息仅存于本地，实际商用过程中
+        \n请使用数据接口对设备终端进行更新。</string>
+
+    <string name="import_text">支持人脸库的批量导入，SDK会自动基于图片
+        \n信息进行用户组和用户的创建</string>
+
+    <string name="mirror_tips">根据镜头或者使用设备差异，可能存在检测框与实际人脸方向镜像的问题，
+        可通过以下设置进行调节。常见于镜头前置后置切换。</string>
+
+    <string name="register_text_explain1">本地人脸库以人脸组的形式进行管理，每个人脸\n组下，可以注册无限个用户。
+        每个用户下默认仅\n一张人脸。 </string>
+    <string name="register_text_explain2">用户名为必填项。请输入英文或者数字，不支持\n汉字或者特殊字符。</string>
+    <string name="register_text_explain3">用户组为非必填项，如不设置用户组名，则默认\n注册到default 组下。您可以在人脸库管理中，
+        进\n行具体人脸组、人脸用户、及详细用户信息的查\n看和编辑。</string>
+    <string name="register_text_explain4">用户信息为非必填项，用于标记用户的一些其他\n信息。</string>
+
+    <string name="setting_notice">修改之后需要重启App方可生效</string>
+
+    <string name="attribute_is_available">BaseConfig的isAttribute要为true</string>
+
+    <string name="bottom_content">— 百度大脑技术支持 —</string>
+
+
+    <string name="cw_idphoto">证件照模型：所处理的图片主要为身份证芯片照、人脸大小很小的证件照原图等。常用于政务身份核验、社保生存证明、酒店前台人证合一等场景</string>
+
+    <string name="cw_rgcognizemodelandtype">对 RGB/NIR/Depth 图像帧进行特征抽取并利用该特征值完成特征比对</string>
+
+    <string name="cw_livephoto">生活照模型：所处理的图片主要为手机采集、视频摄像头采集的图片，也是闸机、门禁、娱乐营销、人脸登录、人脸支付等场景常用的模型，推荐的人脸大小在 60px-200px 之间，尽可能保障是清晰的正面照片</string>
+
+    <string name="cw_livedetecttype">活体检测主要用于判断用户是否为真人，但如使用场景下，常有固定人员看守，则可无需活体，直接采集人脸。因为活体检测虽然保障了安全性，但却会影响一定的通过率。</string>
+
+    <string name="cw_rgblive">RGB:仅使用 RGB 活体（单目活体），可有效防止照片翻拍、屏幕等攻击，前端采集可为 USB 单目镜头即可。</string>
+
+    <string name="cw_rgbandnir">RGB+NIR:RGB 单目活体+NIR 近红外活体，基于近红外图像的成像特点，如屏幕无法成像，不同材质反射率不同等，可对屏幕、高清照片等攻击，更加有效的防作弊。</string>
+
+    <string name="cw_rgbanddepth">RGB+Depth:RGB 单目活体+Depth 深度活体，在 RGB 活体的安全级别基础上，对屏幕、高清彩打照片、视频、模具等防御力更强。硬件需要搭配 3D 结构光、TOF 类型的镜头。</string>
+
+    <string name="cw_cameratype">由于 Depth/ToF 镜头需要加载对应的驱动才能正常显示，因此当选择带有 Depth的活体检测模态时，需要选择相应的镜头型号以加载对应的驱动</string>
+
+    <string name="cw_recognizethrehold">识别阈值：生活照和证件照模型阈值已经都做过分值映射，官方推荐判断为同一人的阈值为 80 分，详细的 FAR 和 FRR 映射关系请在 SDK 文档中查看。阈值越高识别率越高、误识率越低、通过率越低。</string>
+
+    <string name="cw_livethrehold">活体检测阈值：活体阈值用于判断是否活体通过，每种活体模型的阈值单独设定，可以根据此阈值来判断活体通过率和拒绝率。通常情况下，真人的活体得分极大接近于 1，非活体极大接近于 0.0，阈值设定视安全性而定。阈值越高，通过率越低、拒绝率越高</string>
+
+    <string name="cw_gesture">人脸在空间角度的水平旋转、平面旋转、上下俯仰三个方向的角度。角度越小，采集的人脸越正面朝前。</string>
+
+    <string name="cw_bestImage">最优图像帧反映了镜头取到的图像帧适合用作人脸识别的程度，分数范围为0-100，分数越接近于0表示图像越不适合用于做人脸识别，分数越接近于100表示图像越适合用于做人脸识别。</string>
+
+    <string name="cw_illuminiation">人脸面部的光线要求，取值范围[0~255]，脸部光照的灰度值，0 表示光照不好。对应 SDK 中，YUV 的 Y 分量】</string>
+
+    <string name="cw_blur">人脸图片的模糊度范围，取值范围[0~1]，0 是最清晰，1 是最模糊。可根据场景要求适当减小数值，减少模糊图片的采集情况】</string>
+
+    <string name="cw_occulusion">左右眼睛、左右脸颊、鼻子、嘴巴、下巴的遮挡情况，取值范围 [0~1]，0 为无遮挡，1 是完全遮挡。反映采集的人脸图片可接受的各部位的遮挡情况。</string>
+
+    <string name="cw_minface">最小检测人脸：视频流中可以检测到的人脸的最小面积，相同镜头焦距情况下，此数值设置的越小，人脸越容易被检索到，对应的可识别距离也就越大。此数值通常和分辨率一同配合使用。数值可调整范围为 30px 至 200px 之间，需要同时考虑分辨率大小因素影响。每次调节上下改变幅度为 10px。</string>
+
+    <string name="cw_detectangle">从视频流中实际检测人脸的方向，分为 0、90、180、270 四个角度。选择固定方向后，则只有人脸在此方向角度才会被检测到（RGB）。此处的设置并不影响 RGB 视频流回显的方向。</string>
+
+    <string name="cw_cameradisplayangle">摄像头输出视频流的实际预览界面角度，仅作用于 RGB 视频流回显界面。可用于纠正部分摄像头输出视频流角度不正确的问题，从而确保人脸保持水平朝上。</string>
+
+    <string name="cw_detectframe">根据镜头或者使用设备差异，可能存在检测框与实际人脸方向镜像的问题，可通过以下设置进行调节。常见于镜头前置后置切换。</string>
+
+    <string name="cw_cameradisplay">根据镜头或者使用设备差异，可能存在 RGB/NIR/Depth 图像帧镜像的问题，可通过以下设置进行调节。常见于镜头前置后置切换。</string>
+
+    <string name="popup_success">激活成功</string>
+    <string name="home_title">百度人脸离线识别SDK</string>
+    <string name="home_gate">闸机模式</string>
+    <string name="home_gate_english">GATE MODE</string>
+    <string name="home_check">考勤模式</string>
+    <string name="home_check_english">ATTENDANCE MODE</string>
+    <string name="home_pay">支付模式</string>
+    <string name="home_pay_english">PAYMENT MODE</string>home_checkTv
+    <string name="home_attribute">属性模式</string>
+    <string name="home_attribute_english">ATTRIBUTE MODE</string>home_checkTv
+    <string name="home_person">人证核验</string>
+    <string name="home_person_english">CERTIFICATES</string>home_checkTv
+    <string name="home_drive">驾驶行为分析</string>
+    <string name="home_drive_english">DRIVING ANALYSIS</string>home_checkTv
+    <string name="home_attention">注意力检测</string>
+    <string name="home_attention_english">ATTENTION MODE</string>home_checkTv
+    <string name="home_face">人脸注册</string>
+    <string name="home_faceLibrary">人脸库管理</string>
+    <string name="home_baidu">-- 百度大脑技术支持 --</string>
+    <string name="testimony_preview">预览模式</string>
+    <string name="testimony_development">开发模式</string>
+    <string name="hint_adain">重新上传</string>
+    <string name="testimony_upload_files">请上传证件照</string>
+    <string name="testimony_tips_fail">人证核验未通过</string>
+    <string name="testimony_tips_please_fail">请上传正面人脸照片</string>
+    <string name="testimony_tips_success">上传图片不包含人脸</string>
+    <string name="testimony_tips_please_success">无法进行人证比对</string>
+    <string name="string_baidu">百度人脸离线识别SDK</string>
+    <string name="accredit_off">离线激活</string>
+    <string name="off_technological_process">离线激活流程: </string>
+    <string name="off_technological_process_one">购买激活序列号</string>
+    <string name="off_technological_process_two">获取待激活设备的硬件指纹</string>
+    <string name="off_technological_process_three">在百度智能云平台输入设备硬件指纹并获取离线激活文件（License.zip）</string>
+    <string name="off_technological_process_four">将离线激活文件拷贝至内置SD卡根目录下</string>
+    <string name="off_technological_process_five">在SDK界面中触发离线激活</string>
+    <string name="off_local_hardware">本机硬件指纹</string>
+    <string name="off_problem">激活遇到问题?</string>
+    <string name="accredit_on">立即激活</string>
+    <string name="on_technological_process">在线激活流程: </string>
+    <string name="on_technological_process_two">在设备上输入序列号并触发激活</string>
+    <string name="on_number">请输入16位序列号</string>
+    <string name="accredit_use">应用激活</string>
+    <string name="use_technological_process">批量激活流程: </string>
+    <string name="use_technological_process_one">购买应用激活次数</string>
+    <string name="use_technological_process_two">在代码中的LicenseBatch方法填写License ID</string>
+    <string name="use_technological_process_three">点击立即激活按键触发激活</string>
+    <string name="activation_help">激活帮助</string>
+    <string name="activation_failed">激活失败可能原因:</string>
+    <string name="activation_help_one">1. 设备网络问题: 请保证设备网络通畅</string>
+    <string name="activation_help_two">2. 系统时间错误: 请保证系统时间在XX范围内</string>
+    <string name="activation_help_three">3. 硬件指纹变化导致序列号失效</string>
+    <string name="activation_help_four">4. 序列号失效: 请重新购买</string>
+    <string name="activation_help_five">5. 激活文件失效</string>
+    <string name="activation_help_six">6. 未检测到激活文件</string>
+    <string name="technical_support">技术支持:</string>
+    <string name="activation_help_url">http://ticket.bce.baidu.com</string>
+    <string name="filter_vcode">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+</resources>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/logo_view"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linerbarquality"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/qc_save"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:background="@mipmap/ic_return"
+                        android:scaleType="centerInside"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="镜头相关设置"
+                    android:textColor="@color/gate_white"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#333333"></View>
+
+        <View style="@style/configViewtyle"></View>
+
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/gate_30_dp"
+            android:layout_marginRight="@dimen/gate_30_dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sr_liner_rectangle"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/configFaceDetectAngle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    android:id="@+id/tvfaceangle"
+                    style="@style/configTextStyle"
+                    android:layout_height="wrap_content"
+                    android:text="人脸检测角度"></TextView>
+
+                <LinearLayout style="@style/configInnerImageLayout">
+
+                    <TextView
+                        android:id="@+id/tvSettingFaceDetectAngle"
+                        style="@style/configTextStyleTwo"
+                        android:layout_marginRight="10dp"
+                        android:text="270"></TextView>
+
+                    <ImageView style="@style/configInnerImage"></ImageView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#333333"></View>
+
+            <LinearLayout
+                android:id="@+id/configDisplayAngle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    style="@style/configTextStyle"
+                    android:text="视频流回显角度"></TextView>
+
+                <LinearLayout style="@style/configInnerImageLayout">
+
+                    <TextView
+                        android:id="@+id/tvSettingDisplayAngle"
+                        style="@style/configTextStyleTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="270"></TextView>
+
+                    <ImageView style="@style/configInnerImage"></ImageView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#333333"></View>
+
+            <LinearLayout
+                android:id="@+id/configMirror"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    style="@style/configTextStyle"
+                    android:text="镜像设置"></TextView>
+
+                <LinearLayout style="@style/configInnerImageLayout">
+
+                    <ImageView style="@style/configInnerImage"></ImageView>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/logo_view"
+        style="@style/configViewtyle"
+        android:layout_above="@+id/logo_text"></View>
+
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="23dp"
+        android:alpha="0.4"
+        android:gravity="center_horizontal"
+        android:text="— 百度大脑技术支持 —"
+        android:textColor="#666666"
+        android:textSize="@dimen/bottom_font" />
+
+    <View
+        android:id="@+id/popShowRely"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"></View>
+</RelativeLayout>

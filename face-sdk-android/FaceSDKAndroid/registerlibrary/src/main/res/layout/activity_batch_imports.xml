@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/relative_title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/image_import_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="21dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_return" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="批量导入"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_font" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_title"
+        android:background="@drawable/bg_round_import"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginTop="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/text_content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="批量导入操作步骤："
+            android:textColor="#999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_content_title"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="6dp"
+            android:text="一 "
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_tip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_content_title"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/text_1"
+            android:lineSpacingExtra="6dp"
+            android:text="@string/import_tip_1"
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tip1"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="6dp"
+            android:text="二 "
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_tip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tip1"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/text_2"
+            android:lineSpacingExtra="6dp"
+            android:text="@string/import_tip_2"
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tip2"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="6dp"
+            android:text="三 "
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_tip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tip2"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/text_3"
+            android:lineSpacingExtra="6dp"
+            android:text="@string/import_tip_3"
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tip3"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="6dp"
+            android:text="四 "
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text_tip4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tip3"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/text_4"
+            android:lineSpacingExtra="6dp"
+            android:text="@string/import_tip_4"
+            android:textColor="#CCCCCC"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/linear_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="-15dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="49dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:background="@drawable/bg_round_import_file"
+        android:layout_below="@+id/relative_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_folder"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@id/image_file"
+            android:layout_marginLeft="8dp"
+            android:text="已上传文件Face-Import"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/image_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_input_delete"
+            android:layout_marginRight="13dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/button_import"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_show"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginLeft="49dp"
+        android:gravity="center"
+        android:background="@drawable/button_selector"
+        android:text="导入数据"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <!--百度大脑技术支持-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:textSize="@dimen/bottom_font"
+        android:textColor="@color/bottom_font_color"
+        android:text="@string/bottom_content"/>
+
+    <!--黑色背景-->
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7000"
+        android:visibility="invisible"/>
+
+    <!--导入进度条-->
+    <RelativeLayout
+        android:id="@+id/relative_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/top_round"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:id="@+id/relative_progress_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_round">
+
+            <TextView
+                android:id="@+id/text_progress_title"
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="数据导入中 请勿退出..."
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_title_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="文件导入完成"
+                android:layout_centerHorizontal="true"
+                android:textColor="#00BAF2"
+                android:visibility="gone"
+                android:textSize="18sp" />
+
+            <!--圆形进度条-->
+            <RelativeLayout
+                android:id="@+id/relative_progress_bar"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/text_progress_title"
+                android:layout_marginTop="22dp">
+
+                <com.baidu.idl.main.facesdk.registerlibrary.user.view.CircularProgressView
+                    android:id="@+id/progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:backColor="#292929"
+                    app:backWidth="5dp"
+                    app:progColor="#0D9EFF"
+                    app:progWidth="5dp">
+                </com.baidu.idl.main.facesdk.registerlibrary.user.view.CircularProgressView>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+                    <TextView
+                        android:id="@+id/text_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="36sp"
+                        android:textColor="#05C5FF"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/text_progress"
+                        android:text="%"
+                        android:textSize="18sp"
+                        android:layout_alignBottom="@id/text_progress"
+                        android:textColor="#05C5FF"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_import_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_progress_bar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:textColor="#CCCCCC"
+                android:text="数据总数：0" />
+
+            <TextView
+                android:id="@+id/text_import_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/text_import_finish"
+                android:layout_below="@id/text_import_finish"
+                android:textColor="#CCCCCC"
+                android:text="导入成功：0" />
+
+            <TextView
+                android:id="@+id/text_import_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/text_import_finish"
+                android:layout_below="@id/text_import_success"
+                android:textColor="#CCCCCC"
+                android:text="导入失败：0" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_below="@id/relative_progress_num"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/background"/>
+
+        <Button
+            android:id="@+id/button_prog_close"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#222222"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:layout_below="@id/view_line"
+            android:text="关闭"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    signingConfigs {
+//        MD5:  C0:5D:1B:F8:F1:93:86:AA:A3:25:B6:0A:6F:44:31:9B
+//        SHA1: 8E:DA:AA:07:62:53:F7:B3:F6:BC:31:A9:DB:AC:95:06:A9:57:19:E9
+//        SHA256: 6E:A1:41:23:41:49:5A:38:57:B1:A5:8B:8C:C2:C1:30:EA:E0:CC:F0:08:57:75:DE:FC:E1:79:BA:DF:E5:0C:19
+
+        release {
+            storeFile file('android.keystore')
+            storePassword 'innoshine123456'
+            keyPassword 'innoshine123456'
+            keyAlias = 'innoshine'
+        }
+        debug {
+            storeFile file('android.keystore')
+            storePassword 'innoshine123456'
+            keyPassword 'innoshine123456'
+            keyAlias = 'innoshine'
+        }
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.zjh.facedetection"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation project(path: ':mvvmrapid')
+    // 百度语音识别
+    implementation project(path: ':core')
+    // 百度人脸检测
+    implementation project(path: ':faceplatform-ui')
+
+    implementation 'androidx.preference:preference:1.1.1'
+
+    // 内存泄漏测试
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    // Optional, if you use support library fragments:
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
+
+    // 下载
+    implementation 'com.github.zhongjhATC:Retrofit2Rxjava2Download:1.0.2'
+
+}

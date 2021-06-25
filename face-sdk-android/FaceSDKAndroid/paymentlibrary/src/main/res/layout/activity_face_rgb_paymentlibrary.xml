@@ -1,0 +1,334 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_relative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gate_white"
+    android:gravity="center_horizontal">
+
+    <!--********** 预览区域 **********-->
+    <com.baidu.idl.main.facesdk.paymentlibrary.paymentcamera.AutoTexturePreviewView
+        android:id="@+id/auto_camera_preview_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/yvlan_relativeLayout"
+        android:background="#121212" />
+
+    <TextureView
+        android:id="@+id/draw_detect_face_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/yvlan_relativeLayout" />
+    <!--圆形进度条-->
+    <RelativeLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/yvlan_relativeLayout">
+
+        <!--<com.baidu.idl.face.main.view.ProgressBarView-->
+        <!--android:id="@+id/progress_bar_view"-->
+        <!--android:layout_width="355dp"-->
+        <!--android:layout_height="355dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--app:dialIntervalDegree="4"-->
+        <!--app:dialWidth="2dp"-->
+        <!--app:startAngle="-90"-->
+        <!--app:sweepAngle="360" />-->
+        <ImageView
+            android:id="@+id/progress_bar_view"
+            android:layout_width="355dp"
+            android:layout_height="355dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_loading_grey" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pre_toast_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/yvlan_relativeLayout"
+        android:gravity="center_horizontal"
+        android:text="保持面部在取景框内"
+        android:textColor="#ffffff"
+        android:textSize="22sp" />
+
+    <!--送检图片-->
+    <ImageView
+        android:id="@+id/face_detect_image_view"
+        android:layout_width="110dp"
+        android:layout_height="83dp"
+        android:layout_above="@+id/kaifa_relativeLayout"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/gate_imageview_radius"
+        android:src="@mipmap/ic_image_video"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/pay_hintRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/yvlan_relativeLayout"
+        android:layout_below="@+id/search_title"
+        android:background="#121212"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/detect_reg_layout"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="91dp">
+
+            <com.baidu.idl.main.facesdk.paymentlibrary.view.CircleImageView
+                android:id="@+id/detect_reg_image_item"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:id="@+id/is_mask_image"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/is_check_image_view"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_alignEnd="@+id/detect_reg_layout"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="73dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/detect_reg_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detect_reg_layout"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:textColor="#00BAF2"
+            android:textSize="22sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/detect_surface_text"
+        android:layout_width="110dp"
+        android:layout_height="23dp"
+        android:layout_above="@+id/kaifa_relativeLayout"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/relativelayout_radius"
+        android:text=" RGB图片帧"
+        android:textColor="#FFFFFFFF"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/is_check_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/detect_surface_text"
+        android:layout_alignEnd="@+id/face_detect_image_view"
+        android:layout_marginEnd="2dp"
+        android:visibility="visible"
+        tools:ignore="RtlCompat" />
+
+    <RelativeLayout
+        android:id="@+id/layout_compare_status"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_above="@+id/face_detect_image_view"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gate_radius_compare"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_compare_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="#FF00BAF2"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <!--********** 头部 **********-->
+    <include
+        android:id="@+id/search_title"
+        layout="@layout/layout_title_gate" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/search_title"
+        android:background="#333333" />
+    <!--********** 信息展示部分 **********-->
+    <!--开发模式-->
+    <RelativeLayout
+        android:id="@+id/kaifa_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="127dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/gate_radius"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="底库：0个样本"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_detect_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="检测耗时：0ms"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_rgb_live_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_detect"
+                    android:text="RGB活体检测耗时：0ms"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_rgb_live_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RGB活体得分：0.0"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_nir_live_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_detect"
+                    android:text="NIR活体检测耗时：0ms"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_nir_live_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NIR活体得分：0.0"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <View
+                android:id="@+id/id_view"
+                android:layout_width="1dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_alignLeft="@id/id_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_depth_live_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Depth活体检测耗时：0ms"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_depth_live_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Depth活体得分：0.0"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_feature_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特征抽取耗时：0ms"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_feature_search_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="特征比对耗时：0ms"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_all_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总耗时：0ms"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--预览模式-->
+    <RelativeLayout
+        android:id="@+id/yvlan_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/ic_bg_bottom_pattern"
+        android:gravity="center_horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:alpha="0.4"
+            android:gravity="center_horizontal"
+            android:text="— 百度大脑技术支持 —"
+            android:textColor="#666666"
+            android:textSize="@dimen/bottom_font" />
+    </RelativeLayout>
+
+</RelativeLayout>

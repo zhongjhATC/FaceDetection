@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.idl.main.facesdk.gazelibrary.camera.AutoTexturePreviewView
+        android:id="@+id/fa_auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextureView
+        android:id="@+id/draw_detect_face_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/search_title"
+        layout="@layout/layout_title_gatelibrary" />
+
+    <LinearLayout
+        android:id="@+id/gazeRelease"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/gazeReleaseResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:alpha="0.8"
+                android:background="@drawable/liner_all_deb_radious"></RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/gazeResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="注意力"
+                    android:textColor="#00BAF2"
+                    android:textSize="20sp"></TextView>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/gaze_temp"
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/gazeRlDisplay"
+                android:layout_width="110dp"
+                android:layout_height="83dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/face_gaze"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/ic_image_video"></ImageView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:alpha="0.7"
+                    android:background="@drawable/liner_tr_radious"></RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:text="RGB图片帧"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"></TextView>
+
+                    <ImageView
+                        android:id="@+id/gazeIsRGBLive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/ic_icon_develop_success"
+                        android:visibility="gone"></ImageView>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/tem"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="450dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:alpha="0.8"
+                android:background="@drawable/liner_all_radious"></RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/gazeMessage"
+                android:layout_width="450dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="35dp">
+
+                    <TextView
+                        android:id="@+id/gfDetectCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="检测耗时"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/gaRGBCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="活体检测耗时"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"
+                        android:visibility="visible"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="35dp">
+
+                    <TextView
+                        android:id="@+id/gazeDetectCost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:text="注意力检测耗时"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/gaRGBScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="活体检测得分"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp"
+                        android:visibility="visible"></TextView>
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/gazeDebugResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/gazeMiddleLiner"
+            android:layout_width="450dp"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:background="@drawable/liner_all_deb_radious"></RelativeLayout>
+
+            <TextView
+                android:id="@+id/gazeDebugText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="未检测到人脸"
+                android:textColor="#00BAF2"
+                android:textSize="30sp"></TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_baiduTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:alpha="0.4"
+        android:text="@string/home_baidu"
+        android:textColor="#666666"
+        android:textSize="@dimen/bottom_font" />
+</RelativeLayout>

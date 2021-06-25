@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pay_hintRl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+    android:background="#121212"
+    android:visibility="visible">
+
+
+    <!-- 质量检测未通过-->
+    <include
+        android:id="@+id/finance_quality_test_failed"
+        layout="@layout/layout_quality_test_failed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <!-- 活体检测未通过-->
+    <include
+        android:id="@+id/finance_failed_in_vivo_test"
+        layout="@layout/layout_failed_in_vivo_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <!-- 活体检测通过-->
+    <include
+        android:id="@+id/finance_by_living_detection"
+        layout="@layout/layout_by_living_detection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

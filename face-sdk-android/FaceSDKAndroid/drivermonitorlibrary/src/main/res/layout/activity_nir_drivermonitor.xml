@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.idl.face.main.drivermonitor.camera.AutoTexturePreviewView
+        android:id="@+id/fa_auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextureView
+        android:id="@+id/draw_detect_face_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/search_title"
+        layout="@layout/layout_title_gate" />
+
+    <LinearLayout
+        android:id="@+id/dmPreLiner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/driverDebugMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingLeft="23dp"
+            android:paddingRight="23dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:layout_gravity="center_horizontal"
+                android:alpha="0.8"
+                android:background="@drawable/liner_all_deb_radious"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/dmPreTx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="注意力状态"
+                    android:textColor="#00BAF2"
+                    android:textSize="20sp"></TextView>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/bg_bottom_pattern"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="可检测行为"
+                    android:textColor="#cccccc"
+                    android:textSize="16sp"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:text="注意力是否集中、吃东西、打电话、喝水、抽烟"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dmRelLiner"
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/dmReMiddle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="82dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/dmRlRGB"
+                    android:layout_width="110dp"
+                    android:layout_height="83dp"
+                    android:background="@drawable/liner_all_deb_radious">
+
+                    <ImageView
+                        android:id="@+id/dmRgbIv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/ic_image_video"></ImageView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:alpha="0.7"
+                        android:background="@drawable/liner_tr_radious"></RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center_vertical"
+                            android:text="RGB图片帧"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"></TextView>
+
+                        <ImageView
+                            android:id="@+id/driverIsRGBLive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:src="@mipmap/ic_icon_develop_success"
+                            android:visibility="visible"></ImageView>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dmReBottom"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:background="@drawable/liner_all_radious"></RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dmDetectCost"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="检测耗时"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/dmDetecLivetCost"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="活体检测耗时"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dmDetecLivetScore"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="活体得分"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/dmGazeDetectCost"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="注意力检测耗时"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dmDriverDetectCost"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="驾驶行为检测耗时"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/dmDriverCallScore"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="打电话分数"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dmDriverSmokeScore"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="抽烟分数"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/dmDriverDrinkScore"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="喝水分数"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dmDriverEatScore"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="吃东西分数"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/dmDriverNormalScore"
+                        style="@style/driverTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="正常分数"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_baiduTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:alpha="0.4"
+        android:text="@string/home_baidu"
+        android:textColor="#666666"
+        android:textSize="@dimen/bottom_font" />
+
+    <RelativeLayout
+        android:id="@+id/dmRelLinerMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dmRelLiner"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="44dp"
+            android:alpha="0.8"
+            android:background="@drawable/liner_all_deb_radious"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="检测到您"
+                    android:textColor="#00BAF2"
+                    android:textSize="20sp"
+                    android:visibility="gone"></TextView>
+
+                <TextView
+                    android:id="@+id/dmReleaseMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"></TextView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dmRlNir"
+        android:layout_width="110dp"
+        android:layout_height="82dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="105dp"
+        android:alpha="0"
+        android:background="@drawable/liner_all_radious">
+
+        <TextureView
+            android:id="@+id/ir_camera_preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:alpha="0.7"
+            android:background="@drawable/liner_tr_radious"></RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="NIR图片帧"
+                android:textColor="@color/white"
+                android:textSize="14sp"></TextView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
+  -->
+<resources>
+
+    <color name="gate_FF999999">#999999</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="buttonColor">#FF6600</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gate_white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue">#00BFFF</color>
+    <color name="buttonBg">#016838</color>
+    <color name="red">#FF0033</color>
+    <color name="gate_background">#121212</color>
+    <color name="bottom_font_color">#666666</color>
+    <color name="colorLine">#333333</color>
+    <!--<color name="buttonBg">#FF009688</color>-->
+    <color name="start_blue">#FF0DC6FF</color>
+    <color name="activition_color">#999999</color>
+    <color name="activition_view">#222222</color>
+    <color name="activition_red">#F34B56</color>
+    <color name="activition_on">#999999</color>
+    <color name="buttom_title">#666666</color>
+    <color name="off_view">#121212</color>
+    <color name="transparent">#00000000</color>
+    <color name="hui_color">#636363</color>
+</resources>

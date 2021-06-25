@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_marginRight="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:background="@null"
+            android:id="@+id/activity_et_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="@string/filter_vcode"
+            android:gravity="center_horizontal"
+            android:maxLength="4"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:theme="@style/MyEditText"
+            android:typeface="monospace" />
+
+        <View
+            android:id="@+id/activity_one_view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/activity_et_one"
+            android:layout_marginTop="@dimen/start_10"
+            android:background="#666666" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginRight="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:background="@null"
+            android:id="@+id/activity_et_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="@string/filter_vcode"
+            android:gravity="center_horizontal"
+            android:maxLength="5"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:theme="@style/MyEditText"
+            android:typeface="monospace" />
+
+        <View
+            android:id="@+id/activity_two_view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/activity_et_two"
+            android:layout_marginTop="@dimen/start_10"
+            android:background="#666666" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginRight="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:background="@null"
+            android:id="@+id/activity_et_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="@string/filter_vcode"
+            android:gravity="center_horizontal"
+            android:maxLength="5"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:theme="@style/MyEditText"
+            android:typeface="monospace" />
+
+        <View
+            android:id="@+id/activity_three_view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/activity_et_three"
+            android:layout_marginTop="@dimen/start_10"
+            android:background="#666666" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:background="@null"
+            android:id="@+id/activity_et_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="@string/filter_vcode"
+            android:gravity="center_horizontal"
+            android:maxLength="5"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="23sp"
+            android:theme="@style/MyEditText"
+            android:typeface="monospace" />
+
+        <View
+            android:id="@+id/activity_four_view"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/activity_et_four"
+            android:layout_marginTop="@dimen/start_10"
+            android:background="#666666" />
+    </RelativeLayout>
+
+</LinearLayout>

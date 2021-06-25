@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/accredit_titleLl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/accredit_offTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/accredit_off"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/accredit_offView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/start_10"
+            android:layout_below="@+id/accredit_offTv"
+            android:layout_marginTop="-12dp"
+            android:src="@mipmap/ic_highlight" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/accredit_onTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="在线激活"
+            android:textColor="#808080"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/accredit_onView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/start_10"
+            android:layout_below="@+id/accredit_onTv"
+            android:layout_alignStart="@+id/accredit_onTv"
+            android:layout_marginTop="-12dp"
+            android:src="@mipmap/ic_highlight"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/accredit_useTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/accredit_use"
+            android:textColor="#808080"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/accredit_useView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/start_10"
+            android:layout_below="@+id/accredit_useTv"
+            android:layout_alignStart="@+id/accredit_useTv"
+            android:layout_marginTop="-12dp"
+            android:src="@mipmap/ic_highlight"
+            android:visibility="invisible" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.zjh.facedetection"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1001
+        versionName "4.1"
+
+    }
+    signingConfigs {
+//        MD5:  C0:5D:1B:F8:F1:93:86:AA:A3:25:B6:0A:6F:44:31:9B
+//        SHA1: 8E:DA:AA:07:62:53:F7:B3:F6:BC:31:A9:DB:AC:95:06:A9:57:19:E9
+//        SHA256: 6E:A1:41:23:41:49:5A:38:57:B1:A5:8B:8C:C2:C1:30:EA:E0:CC:F0:08:57:75:DE:FC:E1:79:BA:DF:E5:0C:19
+
+        release {
+            storeFile file('android.keystore')
+            storePassword 'innoshine123456'
+            keyPassword 'innoshine123456'
+            keyAlias = 'innoshine'
+        }
+        debug {
+            storeFile file('android.keystore')
+            storePassword 'innoshine123456'
+            keyPassword 'innoshine123456'
+            keyAlias = 'innoshine'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            debuggable true
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            debuggable false
+            jniDebuggable false
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile project(path: ':faceplatform-ui')
+}
