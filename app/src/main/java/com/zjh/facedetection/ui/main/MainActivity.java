@@ -11,6 +11,7 @@ import android.view.Display;
 import android.view.View;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.baidu.aip.bodyanalysis.AipBodyAnalysis;
 import com.baidu.idl.face.platform.ui.utils.BrightnessUtils;
 import com.baidu.idl.face.platform.ui.utils.VolumeUtils;
 import com.blankj.utilcode.util.BarUtils;
@@ -24,6 +25,19 @@ import com.zhongjh.mvvmrapid.base.ui.BaseActivity;
 import com.zhongjh.mvvmrapid.utils.PermissionsUtil;
 import com.zhongjh.mvvmrapid.utils.ToastUtils;
 import com.zhongjh.mvvmrapid.utils.WindowUtil;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * 首页
@@ -58,6 +72,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
      * 播放的图片文件名称
      */
     String mImageName;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,6 +183,12 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
 
         viewModel.mUiChange.showRecordDialog.observe(this,
                 aVoid -> showRecordDialog());
+
+        viewModel.mUiChange.onPreviewFrame.observe(this, bytes -> {
+
+
+
+        });
     }
 
     /**
@@ -244,8 +266,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
      */
     private void showVideo() {
         Log.d(TAG, "showVideo");
-        binding.videoView.setVisibility(View.VISIBLE);
-        binding.imgScreen.setVisibility(View.INVISIBLE);
+        binding.videoView.setVisibility(View.GONE);
+        binding.imgScreen.setVisibility(View.GONE);
     }
 
     /**
@@ -258,8 +280,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                 .placeholder(R.mipmap.ic_launcher)
                 .centerCrop()
                 .into(binding.imgScreen);
-        binding.imgScreen.setVisibility(View.VISIBLE);
-        binding.videoView.setVisibility(View.INVISIBLE);
+        binding.imgScreen.setVisibility(View.GONE);
+        binding.videoView.setVisibility(View.GONE);
     }
 
     /**

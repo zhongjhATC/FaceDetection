@@ -1,11 +1,16 @@
 package com.zjh.facedetection.ui.main;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.ImageFormat;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
+import android.graphics.YuvImage;
 import android.hardware.Camera;
+import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -13,9 +18,27 @@ import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 
+import com.baidu.aip.bodyanalysis.AipBodyAnalysis;
 import com.baidu.idl.face.platform.ui.utils.CameraPreviewUtils;
 import com.baidu.idl.face.platform.ui.utils.CameraUtils;
 import com.baidu.idl.face.platform.utils.APIUtils;
+import com.baidu.idl.face.platform.utils.Base64Utils;
+import com.zjh.facedetection.model.PreviewFrameModel;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * 里面包含开启摄像头等功能
@@ -26,6 +49,8 @@ public class FaceCamera implements
         SurfaceHolder.Callback,
         Camera.PreviewCallback,
         Camera.ErrorCallback {
+
+    private static final String TAG = FaceCamera.class.getSimpleName();
 
     private final Context mContext;
 
@@ -71,13 +96,32 @@ public class FaceCamera implements
      */
     protected int mPreviewDegree;
 
+    MainViewModel.UiChangeObservable mUiChange;
+
+    /**
+     * 初始化一个AipBodyAnalysis 这是AR方面的人体识别
+     */
+    AipBodyAnalysis client = new AipBodyAnalysis("25209607", "hLoeACCQ924GHz1MK2bmT58e", "Npm0aRrAjvm5AYDlt8Zpbe90moLim1GL");
+    HashMap<String, String> options = new HashMap<>();
+    byte[] mPreviewBuffer;
 
     // endregion
 
-    public FaceCamera(Context context, int displayWidth, int displayHeight) {
+    public FaceCamera(Context context, int displayWidth, int displayHeight, MainViewModel.UiChangeObservable uiChange) {
         this.mContext = context;
         initDisplayWidthHeight(displayWidth, displayHeight);
         mFaceDetect = new FaceDetect(context, this);
+
+        mUiChange = uiChange;
+
+        // 可选：设置网络连接参数
+        client.setConnectionTimeoutInMillis(2000);
+        client.setSocketTimeoutInMillis(60000);
+        if (mPreviewBuffer == null) {
+            //不要二次设置mPreviewBuffer 否则可能会有画面延迟，原因还不知道
+            mPreviewBuffer = new byte[mDisplayWidth * mDisplayHeight * 6];
+        }
+
         initSurface();
     }
 
@@ -125,11 +169,104 @@ public class FaceCamera implements
 
     }
 
+    boolean isHandle = false;
+
     @Override
     public void onPreviewFrame(byte[] bytes, Camera camera) {
-        mFaceDetect.onPreviewFrame(bytes);
+//        mFaceDetect.onPreviewFrame(bytes);
+
+//        mUiChange.onPreviewFrame.setValue(bytes);
+
+        if (isHandle) {
+            return;
+        }
+
+        Observable.create((ObservableOnSubscribe<PreviewFrameModel>) e -> {
+            isHandle = true;
+            // TODO 在此处进行网络请求的操作
+            PreviewFrameModel previewFrameModel = new PreviewFrameModel();
+            byte[] newBytes = convertYuvToJpeg(bytes,camera);
+            previewFrameModel.setBytes(newBytes);
+            previewFrameModel.setCamera(camera);
+            try {
+                Log.d(TAG, "请求");
+                JSONObject res = client.gesture(newBytes, options);
+                Log.d(TAG, res.toString(2));
+                e.onNext(previewFrameModel);
+            } catch (Exception ex) {
+                e.onNext(previewFrameModel);
+            }
+        })
+                // 指定被观察者中的方法在io线程中进行处理
+                .subscribeOn(Schedulers.io())
+                // 指定观察者接收数据在主线程中
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<PreviewFrameModel>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(PreviewFrameModel s) {
+                        // TODO 在此处主线程中进行UI的更新
+//                        Bitmap bitmap = getPriviewPic(s.getBytes());
+                        Log.d(TAG,"释放内存");
+                        s.setBytes(null);
+                        System.gc();
+                        isHandle = false;
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG,"释放内存");
+                        System.gc();
+                        isHandle = false;
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+
+        mCamera.addCallbackBuffer(mPreviewBuffer);
+
     }
 
+    public byte[] convertYuvToJpeg(byte[] data, Camera camera) {
+
+        YuvImage image = new YuvImage(data, ImageFormat.NV21,
+                camera.getParameters().getPreviewSize().width, camera.getParameters().getPreviewSize().height, null);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        int quality = 20; //set quality
+        image.compressToJpeg(new Rect(0, 0, camera.getParameters().getPreviewSize().width, camera.getParameters().getPreviewSize().height), quality, baos);//this line decreases the image quality
+
+
+        return baos.toByteArray();
+    }
+
+    public Bitmap getPriviewPic(byte[] data) {//这里传入的data参数就是onpreviewFrame中需要传入的byte[]型数据
+        Camera.Size previewSize = mCamera.getParameters().getPreviewSize();//获取尺寸,格式转换的时候要用到
+        BitmapFactory.Options newOpts = new BitmapFactory.Options();
+        newOpts.inJustDecodeBounds = true;
+        YuvImage yuvimage = new YuvImage(
+                data,
+                ImageFormat.NV21,
+                previewSize.width,
+                previewSize.height,
+                null);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        yuvimage.compressToJpeg(new Rect(0, 0, previewSize.width, previewSize.height), 100, baos);// 80--JPG图片的质量[0-100],100最高
+        byte[] rawImage = baos.toByteArray();
+        //将rawImage转换成bitmap
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inPreferredConfig = Bitmap.Config.RGB_565;
+        Bitmap bitmap = BitmapFactory.decodeByteArray(rawImage, 0, rawImage.length, options);
+        return bitmap;
+    }
     /**
      * @return camera
      */
@@ -177,6 +314,9 @@ public class FaceCamera implements
         if (mCamera == null) {
             try {
                 mCamera = open();
+                if (mCamera != null) {
+                    mCamera.addCallbackBuffer(mPreviewBuffer);
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -214,7 +354,8 @@ public class FaceCamera implements
         mCamera.setParameters(mCameraParam);
 
         try {
-            mCamera.setPreviewTexture(mSurfaceTexture);
+            mCamera.setPreviewDisplay(mSurfaceHolder);
+//            mCamera.setPreviewTexture(mSurfaceTexture);
             mCamera.stopPreview();
             mCamera.setErrorCallback(this);
             mCamera.setPreviewCallback(this);
@@ -266,6 +407,8 @@ public class FaceCamera implements
         }
         return result;
     }
+
+
 
 
 }

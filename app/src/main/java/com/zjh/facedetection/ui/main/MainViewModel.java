@@ -345,6 +345,8 @@ public class MainViewModel extends BaseViewModel implements
         // 显示正在录音
         public SingleLiveEvent<Void> showRecordDialog = new SingleLiveEvent<>();
 
+        // 录制每一帧的事件
+        public SingleLiveEvent<byte[]> onPreviewFrame = new SingleLiveEvent<>();
     }
 
     public MainViewModel(@NonNull Application application) {
@@ -676,7 +678,7 @@ public class MainViewModel extends BaseViewModel implements
      * 里面包含开启摄像头等功能和包含获取人脸回调
      */
     private void initFaceDetect() {
-        mFaceCamera = new FaceCamera(mApplication, mDisplayWidth, mDisplayHeight);
+        mFaceCamera = new FaceCamera(mApplication, mDisplayWidth, mDisplayHeight,mUiChange);
         // 检测到人脸的回调
         mFaceCamera.mFaceDetect.setCallback(new FaceDetect.Callback() {
             @Override
